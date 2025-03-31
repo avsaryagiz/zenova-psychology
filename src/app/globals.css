@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-roboto);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-alert: var(--alert);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.96 0 0);
+  --foreground: oklch(0.32 0 0);
+  --card: oklch(0.97 0 0);
+  --card-foreground: oklch(0.25 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0 0);
+  --primary: oklch(0.65 0.1423 253.92);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.88 0.0706 169.72);
+  --secondary-foreground: oklch(0.32 0 0);
+  --muted: oklch(0.79 0.0184 229.07);
+  --muted-foreground: oklch(0.57 0.0397 229.02);
+  --accent: oklch(0.83 0.1452 73.54);
+  --accent-foreground: oklch(0.4 0.0436 37.96);
+  --destructive: ooklch(0.61 0.209 27.03);
+  --success: oklch(0.63 0.1543 144.2);
+  --alert: oklch(0.77 0.1741 64.05);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0.65 0.1423 253.92);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background font-body text-foreground leading-6;
+  }
+  h1 {
+    @apply font-heading text-5xl leading-14 font-bold tracking-tighter;
+  }
+  h2 {
+    @apply font-heading text-4xl leading-11 font-semibold tracking-wide;
+  }
+  h3 {
+    @apply font-heading text-3xl leading-9 font-medium tracking-wide;
+  }
+  h4 {
+    @apply font-heading text-2xl leading-8;
+  }
+  nav {
+    @apply font-heading text-sm font-medium tracking-wide;
+  }
+}
