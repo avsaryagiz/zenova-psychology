@@ -1,4 +1,4 @@
-import { contactInfo } from "../constants";
+import { contactInfo } from "../layout-constants";
 
 export default function HeaderBanner() {
   return (

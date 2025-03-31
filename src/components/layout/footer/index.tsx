@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button, Input } from "@/components/ui";
 import { MENUS } from "@/config/menus";
-import { contactInfo } from "../constants";
+import { contactInfo } from "../layout-constants";
 import FooterCopyright from "./footer-copyright";
 
 export default function Footer() {

@@ -1,4 +1,4 @@
-import { SocialLinkContent } from "./constants";
+import { SocialLinkContent } from "./layout-constants";
 
 export default function SocialLinks() {
   return (
