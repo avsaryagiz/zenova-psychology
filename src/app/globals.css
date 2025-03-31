@@ -5,7 +5,9 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
   --font-heading: var(--font-poppins);
   --font-body: var(--font-roboto);
   --color-ring: var(--ring);
@@ -15,6 +17,7 @@
   --color-success: var(--success);
   --color-alert: var(--alert);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-description: var(--accent-description);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
@@ -46,9 +49,10 @@
   --secondary-foreground: oklch(0.32 0 0);
   --muted: oklch(0.79 0.0184 229.07);
   --muted-foreground: oklch(0.57 0.0397 229.02);
-  --accent: oklch(0.83 0.1452 73.54);
-  --accent-foreground: oklch(0.4 0.0436 37.96);
-  --destructive: ooklch(0.61 0.209 27.03);
+  --accent: oklch(0.91 0.02 270);
+  --accent-foreground: oklch(0.25 0.03 270);
+  --accent-description: oklch(0.58 0.0405 261.2);
+  --destructive: oklch(0.61 0.209 27.03);
   --success: oklch(0.63 0.1543 144.2);
   --alert: oklch(0.77 0.1741 64.05);
   --border: oklch(0.9 0 0);
@@ -64,18 +68,57 @@
     @apply bg-background font-body text-foreground leading-6;
   }
   h1 {
-    @apply font-heading text-5xl leading-14 font-bold tracking-tighter;
+    @apply font-heading text-5xl leading-14 font-bold tracking-tighter max-sm:text-xl;
   }
   h2 {
-    @apply font-heading text-4xl leading-11 font-semibold tracking-wide;
+    @apply font-heading text-4xl leading-11 font-semibold tracking-wide max-sm:text-lg;
   }
   h3 {
-    @apply font-heading text-3xl leading-9 font-medium tracking-wide;
+    @apply font-heading text-3xl leading-9 font-medium tracking-wide max-sm:text-base;
   }
   h4 {
-    @apply font-heading text-2xl leading-8;
+    @apply font-heading text-2xl leading-8 max-sm:text-base;
   }
   nav {
     @apply font-heading text-sm font-medium tracking-wide;
+  }
+  .button {
+    @apply font-heading text-sm font-medium tracking-wider;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto w-full px-4;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1536px;
+    }
   }
 }
