@@ -1,4 +1,5 @@
 // IN-APP
+export { default as ChevronDownIcon } from "./chevron-down-icon";
 export { default as LocationIcon } from "./location-icon";
 export { default as SearchIcon } from "./search-icon";
 export { default as CloseIcon } from "./close-icon";
