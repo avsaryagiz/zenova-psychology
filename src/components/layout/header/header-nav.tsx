@@ -18,6 +18,7 @@ import {
   navigationMenuTriggerStyle,
   Sheet,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -27,6 +28,7 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MENUS } from "@/config/menus";
+import SocialLinks from "../social-links";
 
 export default function HeaderNav() {
   const [open, setOpen] = useState(false);
@@ -94,6 +96,9 @@ export default function HeaderNav() {
                 ),
               )}
             </div>
+            <SheetFooter className="items-center border-t pt-8 pb-6">
+              <SocialLinks />
+            </SheetFooter>
           </SheetContent>
         </Sheet>
       </div>

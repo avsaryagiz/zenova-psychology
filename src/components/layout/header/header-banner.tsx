@@ -1,22 +1,4 @@
-import { LocationIcon, MailIcon, PhoneIcon } from "@/components/icons";
-
-const contactInfo = [
-  {
-    Icon: LocationIcon,
-    text: "Zuhuratbaba Mah. Dr. Tevfik Sağlam Cad Gürmen Apt. No:7 Daire: 7, 34147 Bakırköy/İstanbul",
-    link: "https://maps.app.goo.gl/bF4uiLptcxKJKBM26",
-  },
-  {
-    Icon: MailIcon,
-    text: "info@zenovapsikoloji.com",
-    link: "mailto:info@zenovapsikoloji.com",
-  },
-  {
-    Icon: PhoneIcon,
-    text: "+90 555 123 45 67",
-    link: "tel:+905551234567",
-  },
-];
+import { contactInfo } from "../constants";
 
 export default function HeaderBanner() {
   return (

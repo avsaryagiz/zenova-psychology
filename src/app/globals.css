@@ -68,16 +68,16 @@
     @apply bg-background font-body text-foreground leading-6;
   }
   h1 {
-    @apply font-heading text-5xl leading-14 font-bold tracking-tighter max-sm:text-xl;
+    @apply font-heading text-4xl leading-14 font-bold tracking-tighter max-sm:text-xl;
   }
   h2 {
-    @apply font-heading text-4xl leading-11 font-semibold tracking-wide max-sm:text-lg;
+    @apply font-heading text-3xl leading-11 font-semibold tracking-wide max-sm:text-lg;
   }
   h3 {
-    @apply font-heading text-3xl leading-9 font-medium tracking-wide max-sm:text-base;
+    @apply font-heading text-2xl leading-9 font-medium tracking-wide max-sm:text-base;
   }
   h4 {
-    @apply font-heading text-2xl leading-8 max-sm:text-base;
+    @apply font-heading text-xl leading-8 font-medium max-sm:text-base;
   }
   nav {
     @apply font-heading text-sm font-medium tracking-wide;

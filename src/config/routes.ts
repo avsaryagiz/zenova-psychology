@@ -20,4 +20,4 @@ export const ROUTES = {
     CONTACT: "/iletisim",
     APPOINTMENT: "/randevu-al",
   },
-};
+} as const;
