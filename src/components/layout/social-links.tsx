@@ -1,9 +1,9 @@
-import { SocialLinkContent } from "./layout-constants";
+import { SOCIAL_LINK_CONTENTS } from "./layout-constants";
 
 export default function SocialLinks() {
   return (
     <div className="flex items-center gap-4">
-      {Object.entries(SocialLinkContent).map(
+      {Object.entries(SOCIAL_LINK_CONTENTS).map(
         ([key, { href, icon: Icon, label, title }]) => (
           <a
             key={key}

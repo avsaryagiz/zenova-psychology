@@ -10,7 +10,7 @@ import {
 } from "../icons";
 import { SOCIAL_MEDIA_ROUTES } from "@/config/social-media-routes";
 
-export const contactInfo = [
+export const CONTACT_INFO = [
   {
     Icon: LocationIcon,
     text: SOCIAL_MEDIA_ROUTES.LOCATION,
@@ -28,7 +28,7 @@ export const contactInfo = [
   },
 ];
 
-export const SocialLinkContent = {
+export const SOCIAL_LINK_CONTENTS = {
   facebook: {
     href: SOCIAL_MEDIA_ROUTES.FACEBOOK,
     icon: FacebookIcon,

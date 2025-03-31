@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button, Input } from "@/components/ui";
 import { MENUS } from "@/config/menus";
-import { contactInfo } from "../layout-constants";
+import { CONTACT_INFO } from "../layout-constants";
 import FooterCopyright from "./footer-copyright";
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
               yardımcı olmaktan mutluluk duyarız!
             </p>
             <div className="flex flex-col space-y-2">
-              {contactInfo.map(({ Icon, text, link }, index) => (
+              {CONTACT_INFO.map(({ Icon, text, link }, index) => (
                 <a
                   key={index}
                   href={link}

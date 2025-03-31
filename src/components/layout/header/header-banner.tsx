@@ -1,4 +1,4 @@
-import { contactInfo } from "../layout-constants";
+import { CONTACT_INFO } from "../layout-constants";
 
 export default function HeaderBanner() {
   return (
@@ -9,7 +9,7 @@ export default function HeaderBanner() {
           yardımcı olmaktan mutluluk duyarız!
         </p>
         <div className="flex items-start gap-6">
-          {contactInfo.map(({ Icon, text, link }, index) => (
+          {CONTACT_INFO.map(({ Icon, text, link }, index) => (
             <div key={index} className="flex items-start gap-2">
               <Icon className="text-primary size-4" />
               {link ? (
