@@ -9,6 +9,11 @@ import HeaderSearch from "./header-search";
 import HeaderNav from "./header-nav";
 import { ROUTES } from "@/config/routes";
 import { cn } from "@/lib/utils";
+import { PhoneIcon } from "@/components/icons";
+import { SOCIAL_MEDIA_ROUTES } from "@/config/social-media-routes";
+import Image from "next/image";
+import LogoType from "/public/images/logo/zenova-logo-type.png";
+import LogoMark from "/public/images/logo/zenova-logo-mark.png";
 
 export default function Header() {
   const headerRef = useRef<HTMLElement | null>(null);
@@ -34,25 +39,50 @@ export default function Header() {
       <HeaderBanner />
       <div className="border-b py-4">
         <div className="container flex items-center justify-between">
-          <h2>Zenova Psikoloji</h2>
-          <Link
-            className={cn(
-              buttonVariants({ variant: "default", size: "custom" }),
-              "max-sm:hidden",
-            )}
-            href={ROUTES.INTERNAL.APPOINTMENT}
-          >
-            Ücretsiz Bir Randevu Al
+          <Link href={ROUTES.INTERNAL.HOME}>
+            <Image
+              src={LogoType}
+              priority
+              alt="Zenova Psikoloji Logo"
+              className="h-16 w-auto max-sm:hidden"
+            />
+
+            <Image
+              src={LogoMark}
+              priority
+              alt="Zenova Psikoloji Logo"
+              className="hidden h-9 w-auto max-sm:block"
+            />
           </Link>
-          <Link
-            className={cn(
-              buttonVariants({ variant: "default", size: "custom" }),
-              "sm:hidden",
-            )}
-            href={ROUTES.INTERNAL.APPOINTMENT}
-          >
-            Randevu Al
-          </Link>
+          <div className="flex items-center gap-8 lg:gap-16">
+            <div className="text-primary flex items-center max-xl:flex-col max-xl:items-start max-md:hidden lg:gap-3">
+              <div className="flex items-center gap-3">
+                <PhoneIcon className="size-4 lg:size-7" />
+                <h3 className="max-xl:text-xl">Bizi Arayın:</h3>
+              </div>
+              <a href={`tel:${SOCIAL_MEDIA_ROUTES.PHONE.trim()}`}>
+                <h3 className="max-xl:text-xl">{SOCIAL_MEDIA_ROUTES.PHONE}</h3>
+              </a>
+            </div>
+            <Link
+              className={cn(
+                buttonVariants({ variant: "default", size: "custom" }),
+                "max-sm:hidden",
+              )}
+              href={ROUTES.INTERNAL.APPOINTMENT}
+            >
+              Hemen Bir Randevu Al
+            </Link>
+            <Link
+              className={cn(
+                buttonVariants({ variant: "default", size: "custom" }),
+                "sm:hidden",
+              )}
+              href={ROUTES.INTERNAL.APPOINTMENT}
+            >
+              Randevu Al
+            </Link>
+          </div>
         </div>
       </div>
 

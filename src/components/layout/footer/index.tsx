@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h4>Zenova Psikoloji</h4>
             <p className="text-muted-foreground">
-              Hafta içi her gün 09:00 - 18:00 saatleri arasında açığız. Size
+              Salı - Pazar : 10:00 - 19:00 saatleri arasında açığız. Size
               yardımcı olmaktan mutluluk duyarız!
             </p>
             <div className="flex flex-col space-y-2">
