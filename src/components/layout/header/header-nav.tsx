@@ -96,7 +96,7 @@ export default function HeaderNav() {
                 ),
               )}
             </div>
-            <SheetFooter className="items-center border-t pt-8 pb-6">
+            <SheetFooter className="items-center border-t pt-6 pb-6">
               <SocialLinks />
             </SheetFooter>
           </SheetContent>

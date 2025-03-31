@@ -2,7 +2,7 @@ import SocialLinks from "../social-links";
 
 export default function FooterCopyright() {
   return (
-    <div className="mt-8 border-t pt-8">
+    <div className="mt-6 border-t pt-6">
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         {/* Social Media Links */}
         <SocialLinks />
