@@ -26,14 +26,14 @@ export const MENUS: IMenus = {
     {
       key: "ABOUT",
       label: "Hakkımızda",
-      title: "Hakkımızda - Şirketimiz Hakkında Bilgi",
+      title: "Hakkımızda - Zenova Psikoloji Hakkında Bilgi",
       path: ROUTES.INTERNAL.ABOUT.ROOT,
       children: [
         {
           key: "WHO_WE_ARE",
-          label: "Biz Kimiz?",
-          title: "Biz Kimiz? - Şirketimiz Hakkında Bilgi",
-          description: "Şirketimiz hakkında bilgi edinin.",
+          label: "Bizi Tanıyın",
+          title: "Bizi Tanıyın - Zenova Psikoloji Hakkında Bilgi",
+          description: "Zenova Psikoloji hakkında bilgi edinin.",
           path: ROUTES.INTERNAL.ABOUT.WHO_WE_ARE,
           isExternal: false,
         },

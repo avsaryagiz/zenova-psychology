@@ -30,7 +30,7 @@ const team = [
   },
 ];
 
-export default function HomeTeamSection() {
+export default function TeamSection() {
   return (
     <section id="uzman-kadro" className="bg-card py-16 shadow-inner md:py-24">
       <div className="container">

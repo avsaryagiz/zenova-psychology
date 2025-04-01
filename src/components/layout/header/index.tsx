@@ -1,19 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { buttonVariants } from "@/components/ui/button";
+import LogoType from "/public/images/logo/zenova-logo-type.png";
+import LogoMark from "/public/images/logo/zenova-logo-mark.png";
+import { AppointmentButton } from "@/components/shared/appointment-button";
+import { WhatsappIcon } from "@/components/icons";
 import HeaderBanner from "./header-banner";
 import HeaderSearch from "./header-search";
 import HeaderNav from "./header-nav";
-import { ROUTES } from "@/config/routes";
-import { cn, formatPhoneNumber } from "@/lib/utils";
-import { WhatsappIcon } from "@/components/icons";
 import { SOCIAL_MEDIA_ROUTES } from "@/config/social-media-routes";
-import Image from "next/image";
-import LogoType from "/public/images/logo/zenova-logo-type.png";
-import LogoMark from "/public/images/logo/zenova-logo-mark.png";
+import { ROUTES } from "@/config/routes";
+import { formatPhoneNumber } from "@/lib/utils";
 
 export default function Header() {
   const headerRef = useRef<HTMLElement | null>(null);
@@ -62,24 +62,7 @@ export default function Header() {
               <WhatsappIcon className="size-4 lg:size-9" />
               <h3 className="max-xl:text-xl">{SOCIAL_MEDIA_ROUTES.PHONE}</h3>
             </a>
-            <Link
-              className={cn(
-                buttonVariants({ variant: "default", size: "custom" }),
-                "max-sm:hidden",
-              )}
-              href={ROUTES.INTERNAL.APPOINTMENT}
-            >
-              Hemen Bir Randevu Al
-            </Link>
-            <Link
-              className={cn(
-                buttonVariants({ variant: "default", size: "custom" }),
-                "sm:hidden",
-              )}
-              href={ROUTES.INTERNAL.APPOINTMENT}
-            >
-              Randevu Al
-            </Link>
+            <AppointmentButton variant="header" />
           </div>
         </div>
       </div>

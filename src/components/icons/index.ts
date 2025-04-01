@@ -1,18 +1,38 @@
 // IN-APP
 export { default as ChevronRightIcon } from "./chevron-right-icon";
 export { default as ChevronDownIcon } from "./chevron-down-icon";
+export { default as CheckCircleIcon } from "./check-circle-icon";
 export { default as MedicalTestIcon } from "./medical-test-icon";
+export { default as ArrowRightIcon } from "./arrow-right-icon";
 export { default as HeartCrackIcon } from "./heart-crack-icon";
 export { default as AdolescentIcon } from "./adolescent-icon";
+export { default as ArrowLeftIcon } from "./arrow-left-icon";
+export { default as ChevronUpIcon } from "./chevron-up-icon";
+export { default as LightbulbIcon } from "./lightbulb-icon";
+export { default as BookOpenIcon } from "./book-open-icon";
+export { default as BarChartIcon } from "./bar-chart-icon";
 export { default as UserGearIcon } from "./user-gear-icon";
+export { default as CalendarIcon } from "./calendar-icon";
 export { default as LocationIcon } from "./location-icon";
 export { default as CommentsIcon } from "./comments-icon";
 export { default as SearchIcon } from "./search-icon";
 export { default as CoupleIcon } from "./couple-icon";
 export { default as FamilyIcon } from "./family-icon";
+export { default as ShieldIcon } from "./shield-icon";
+export { default as AwardIcon } from "./award-icon";
 export { default as ChildIcon } from "./child-icon";
 export { default as CloseIcon } from "./close-icon";
+export { default as HeartIcon } from "./heart-icon";
+export { default as UsersIcon } from "./users-icon";
+export { default as TrainIcon } from "./train-icon";
+export { default as CheckIcon } from "./check-icon";
+export { default as ClockIcon } from "./clock-icon";
+export { default as UserIcon } from "./user-icon";
+export { default as PlayIcon } from "./play-icon";
+export { default as StarIcon } from "./star-icon";
 export { default as MenuIcon } from "./menu-icon";
+export { default as CarIcon } from "./car-icon";
+export { default as BusIcon } from "./bus-icon";
 
 // SOCIAL
 export { default as InstagramIcon } from "./instagram-icon";

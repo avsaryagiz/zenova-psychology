@@ -8,6 +8,7 @@ export * from "./select";
 export * from "./dialog";
 export * from "./sheet";
 export * from "./input";
+export * from "./badge";
 export * from "./label";
 export * from "./card";
 export * from "./tabs";

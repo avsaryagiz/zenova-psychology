@@ -1,18 +1,29 @@
-import React from "react";
-
-interface TitleSectionProps {
-  title: string;
-  description: string;
-}
+import { cn } from "@/lib/utils";
+import type { ITitleSection } from "@/types/shared-types";
 
 export default function TitleSection({
   title,
   description,
-}: TitleSectionProps) {
+  titleClassName,
+  descriptionClassName,
+}: ITitleSection) {
   return (
-    <section className="text-center">
-      <h2 className="mx-auto mb-4 w-fit border-b">{title}</h2>
-      <p className="text-muted-foreground mx-auto max-w-2xl">{description}</p>
+    <section className={cn("flex flex-col items-center gap-4", titleClassName)}>
+      <h2 className="border-b">{title}</h2>
+      {description ? (
+        typeof description === "string" ? (
+          <p
+            className={cn(
+              "text-muted-foreground mx-auto max-w-2xl text-center",
+              descriptionClassName,
+            )}
+          >
+            {description}
+          </p>
+        ) : (
+          description
+        )
+      ) : null}
     </section>
   );
 }

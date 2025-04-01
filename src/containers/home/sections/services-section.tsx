@@ -14,16 +14,11 @@ import {
   MedicalTestIcon,
   UserGearIcon,
 } from "@/components/icons";
-import {
-  buttonVariants,
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import { ROUTES } from "@/config/routes";
 import { cn } from "@/lib/utils";
 import TitleSection from "@/components/shared/title-section";
+import { AppointmentButton } from "@/components/shared/appointment-button";
 
 const services = [
   {
@@ -149,7 +144,7 @@ const services = [
   },
 ];
 
-export default function HomeServicesSection() {
+export default function ServicesSection() {
   const [activeTab, setActiveTab] = useState(services[0].id);
 
   return (
@@ -218,13 +213,7 @@ export default function HomeServicesSection() {
                     </ul>
                   </div>
 
-                  <Link
-                    href={ROUTES.INTERNAL.APPOINTMENT}
-                    className={buttonVariants({ size: "lg" })}
-                    role="button"
-                  >
-                    Randevu Al
-                  </Link>
+                  <AppointmentButton />
                 </div>
 
                 <div className="relative order-1 my-auto h-[300px] overflow-hidden rounded-lg md:order-2 md:h-[400px]">

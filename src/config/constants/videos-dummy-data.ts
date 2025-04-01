@@ -1,0 +1,148 @@
+import type { IVideoItem } from "@/types/shared-types";
+
+export const VIDEO_ITEMS: IVideoItem[] = [
+  {
+    id: 1,
+    title: "Depresyon Nedir? Belirtileri ve Tedavi Yöntemleri",
+    description:
+      "Dr. Elif Yılmaz, depresyonun belirtilerini ve tedavi yöntemlerini anlatıyor.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "egitim",
+    duration: "12:45",
+    date: "15.03.2023",
+    views: 1250,
+  },
+  {
+    id: 2,
+    title: "Kaygı Bozuklukları ve Başa Çıkma Yöntemleri",
+    description:
+      "Uzman Psikolog Ahmet Kaya, kaygı bozuklukları ve başa çıkma yöntemleri hakkında bilgi veriyor.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "egitim",
+    duration: "15:20",
+    date: "22.04.2023",
+    views: 980,
+  },
+  {
+    id: 3,
+    title: "Çocuklarda Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB)",
+    description:
+      "Çocuk Psikoloğu Selin Demir, DEHB'nin belirtileri ve tedavi yaklaşımları hakkında bilgi veriyor.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "egitim",
+    duration: "18:30",
+    date: "10.05.2023",
+    views: 1560,
+  },
+  {
+    id: 4,
+    title: "Zenova Psikoloji Merkezi Tanıtım Videosu",
+    description:
+      "Zenova Psikoloji Merkezi'nin tanıtım videosu. Merkezimizi, ekibimizi ve hizmetlerimizi tanıyın.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "tanitim",
+    duration: "05:15",
+    date: "01.02.2023",
+    views: 2340,
+  },
+  {
+    id: 5,
+    title: "Travma Sonrası Stres Bozukluğu ve EMDR Terapisi",
+    description:
+      "Psikoterapist Burak Öztürk, travma sonrası stres bozukluğu ve EMDR terapisi hakkında bilgi veriyor.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "egitim",
+    duration: "14:50",
+    date: "18.06.2023",
+    views: 1120,
+  },
+  {
+    id: 6,
+    title: "Çift Terapisi: İlişkilerde İletişim Sorunları",
+    description:
+      "Aile ve Çift Terapisti Ahmet Kaya, ilişkilerde iletişim sorunları ve çözüm yolları hakkında bilgi veriyor.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "egitim",
+    duration: "16:25",
+    date: "05.07.2023",
+    views: 890,
+  },
+  {
+    id: 7,
+    title: "Zenova Psikoloji Ofis Turu",
+    description:
+      "Zenova Psikoloji Merkezi'nin ofis turu. Rahat ve güvenli terapi ortamımızı keşfedin.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "tanitim",
+    duration: "04:30",
+    date: "12.03.2023",
+    views: 1780,
+  },
+  {
+    id: 8,
+    title: "Danışan Hikayeleri: Depresyondan Kurtulma Yolculuğum",
+    description:
+      "Bir danışanımızın depresyondan kurtulma yolculuğu ve terapi deneyimi.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "deneyim",
+    duration: "08:45",
+    date: "20.08.2023",
+    views: 2150,
+  },
+  {
+    id: 9,
+    title: "Mindfulness ve Stres Yönetimi Teknikleri",
+    description:
+      "Klinik Psikolog Zeynep Aydın, mindfulness ve stres yönetimi teknikleri hakkında bilgi veriyor.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "egitim",
+    duration: "13:10",
+    date: "15.09.2023",
+    views: 1340,
+  },
+  {
+    id: 10,
+    title: "Danışan Hikayeleri: Panik Atak ile Mücadelem",
+    description:
+      "Bir danışanımızın panik atak ile mücadelesi ve terapi deneyimi.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "deneyim",
+    duration: "09:20",
+    date: "10.10.2023",
+    views: 1680,
+  },
+  {
+    id: 11,
+    title: "Çocuk Gelişiminde Oyunun Önemi",
+    description:
+      "Çocuk Gelişim Uzmanı Ayşe Kara, çocuk gelişiminde oyunun önemi hakkında bilgi veriyor.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "egitim",
+    duration: "11:35",
+    date: "05.11.2023",
+    views: 950,
+  },
+  {
+    id: 12,
+    title: "Zenova Psikoloji Atölye Çalışmaları",
+    description:
+      "Zenova Psikoloji Merkezi'nde düzenlenen atölye çalışmalarından görüntüler ve katılımcı deneyimleri.",
+    thumbnail: "/images/home/hero/profesyonel-destek.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "tanitim",
+    duration: "06:50",
+    date: "20.12.2023",
+    views: 820,
+  },
+];

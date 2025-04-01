@@ -15,6 +15,7 @@ import {
 } from "@/components/ui";
 import { ROUTES } from "@/config/routes";
 import { cn } from "@/lib/utils";
+import { AppointmentButton } from "@/components/shared/appointment-button";
 
 const heroSlides = [
   {
@@ -43,7 +44,7 @@ const heroSlides = [
   },
 ];
 
-export default function HomeHeroSection() {
+export default function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -93,18 +94,7 @@ export default function HomeHeroSection() {
                         {slide.description}
                       </p>
                       <div className="flex flex-wrap gap-4 pt-2">
-                        <Link
-                          href={ROUTES.INTERNAL.APPOINTMENT}
-                          className={cn(
-                            buttonVariants({
-                              size: "lg",
-                            }),
-                            "max-sm:h-8 max-sm:gap-1.5 max-sm:px-3 max-sm:has-[>svg]:px-2.5",
-                          )}
-                          role="button"
-                        >
-                          Randevu Al
-                        </Link>
+                        <AppointmentButton />
                         <Link
                           href={ROUTES.INTERNAL.SERVICES.ROOT}
                           className={cn(

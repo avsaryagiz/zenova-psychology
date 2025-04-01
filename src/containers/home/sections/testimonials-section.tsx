@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Star } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
-import { CommentsIcon } from "@/components/icons";
+import { CommentsIcon, StarIcon } from "@/components/icons";
 import {
   Carousel,
   CarouselContent,
@@ -72,7 +71,7 @@ const testimonials = [
   },
 ];
 
-export default function HomeTestimonialsSection() {
+export default function TestimonialsSection() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -120,7 +119,7 @@ export default function HomeTestimonialsSection() {
                           <CommentsIcon className="text-primary mb-3 h-6 w-6 md:h-8 md:w-8" />
                           <div className="flex">
                             {Array.from({ length: 5 }).map((_, i) => (
-                              <Star
+                              <StarIcon
                                 key={i}
                                 className={cn(
                                   "h-3 w-3 md:h-4 md:w-4",
@@ -134,7 +133,7 @@ export default function HomeTestimonialsSection() {
                         </div>
 
                         <p className="text-muted-foreground mb-4 text-sm leading-relaxed italic md:text-base">
-                          "{quote}"
+                          &quot;{quote}&quot;
                         </p>
 
                         <div className="mt-auto flex items-center">
