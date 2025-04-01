@@ -22,6 +22,7 @@ import {
   CardContent,
 } from "@/components/ui";
 import { cn } from "@/lib/utils";
+import TitleSection from "@/components/shared/title-section";
 
 const testimonials = [
   {
@@ -88,15 +89,13 @@ export default function HomeTestimonialsSection() {
   }, [api]);
 
   return (
-    <section className="py-10 md:py-16 lg:py-24">
+    <section id="danisan-yorumlari" className="py-10 md:py-16 lg:py-24">
       <div className="container mb-12 flex flex-col gap-12 px-4 sm:px-6">
-        <div className="text-center">
-          <h2 className="mx-auto mb-4 w-fit border-b">Danışan Yorumları</h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl">
-            Danışanlarımızın deneyimleri ve başarı hikayeleri. Sizin de
-            hayatınızı değiştirebiliriz.
-          </p>
-        </div>
+        <TitleSection
+          title="Danışan Yorumları"
+          description=" Danışanlarımızın deneyimleri ve başarı hikayeleri. Sizin de
+            hayatınızı değiştirebiliriz."
+        />
 
         <div className="relative">
           <Carousel

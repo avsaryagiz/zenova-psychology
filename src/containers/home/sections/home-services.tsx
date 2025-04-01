@@ -23,6 +23,7 @@ import {
 } from "@/components/ui";
 import { ROUTES } from "@/config/routes";
 import { cn } from "@/lib/utils";
+import TitleSection from "@/components/shared/title-section";
 
 const services = [
   {
@@ -157,13 +158,11 @@ export default function HomeServicesSection() {
       className="container flex min-h-screen flex-col items-center justify-center max-md:py-10"
     >
       <div className="flex flex-col gap-12">
-        <div className="text-center">
-          <h2 className="mx-auto mb-4 w-fit border-b">Hizmetlerimiz</h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl">
-            Zenova Psikoloji olarak, bireylerin ve ailelerin ruh sağlığı
-            ihtiyaçlarına yönelik kapsamlı ve profesyonel hizmetler sunuyoruz.
-          </p>
-        </div>
+        <TitleSection
+          title="Hizmetlerimiz"
+          description="Zenova Psikoloji olarak, bireylerin ve ailelerin ruh sağlığı
+            ihtiyaçlarına yönelik kapsamlı ve profesyonel hizmetler sunuyoruz."
+        />
 
         <Tabs
           defaultValue={services[0].id}

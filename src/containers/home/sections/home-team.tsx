@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui";
+import TitleSection from "@/components/shared/title-section";
 
 // Sample data
 const team = [
@@ -31,16 +32,14 @@ const team = [
 
 export default function HomeTeamSection() {
   return (
-    <section className="bg-card py-16 shadow-inner md:py-24">
+    <section id="uzman-kadro" className="bg-card py-16 shadow-inner md:py-24">
       <div className="container">
-        <div className="mb-12 text-center">
-          <h2 className="mx-auto mb-4 w-fit border-b">Uzman Ekibimiz</h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl">
-            Alanında uzman ve deneyimli psikologlarımızla tanışın.
-          </p>
-        </div>
+        <TitleSection
+          title="Uzman Kadromuz"
+          description="Alanında uzman ve deneyimli psikologlarımızla tanışın."
+        />
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {team.map(({ bio, image, name, title }, index) => (
             <div key={index} className="text-center">
               <Avatar className="relative h-96 w-full overflow-hidden rounded-md">

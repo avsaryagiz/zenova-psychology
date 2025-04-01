@@ -7,6 +7,7 @@ import { ROUTES } from "@/config/routes";
 export default function HomeCTASection() {
   return (
     <section
+      id="randevu-al"
       className="relative flex h-96 items-center justify-center overflow-hidden bg-cover bg-fixed py-24 md:py-32"
       style={{
         backgroundImage: `url('/images/home/hero/aile-terapisi.jpg')`,

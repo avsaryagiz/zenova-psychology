@@ -5,7 +5,7 @@ export const ROUTES = {
       ROOT: "/hakkimizda",
       TEAM: "/hakkimizda/ekibimiz",
       OFFICE: "/hakkimizda/ofisimiz",
-      WHO_WE_ARE: "/hakkimizda/biz-kimiz",
+      WHO_WE_ARE: "/hakkimizda/bizi-taniyin",
     },
     SERVICES: {
       ROOT: "/hizmetlerimiz",

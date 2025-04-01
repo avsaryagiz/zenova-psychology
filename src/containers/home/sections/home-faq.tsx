@@ -1,3 +1,5 @@
+import TitleSection from "@/components/shared/title-section";
+
 const faqs = [
   {
     question: "Terapi seansları ne kadar sürer?",
@@ -23,16 +25,14 @@ const faqs = [
 
 export default function HomeFAQSection() {
   return (
-    <section className="py-16 shadow-inner md:py-24">
+    <section id="s-s-s" className="py-16 shadow-inner md:py-24">
       <div className="container">
-        <div className="mb-12 text-center">
-          <h2 className="mx-auto mb-4 w-fit border-b">Sıkça Sorulan Sorular</h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl">
-            Psikolojik danışmanlık hizmetlerimiz hakkında merak edilenler.
-          </p>
-        </div>
+        <TitleSection
+          title="Sıkça Sorulan Sorular"
+          description=" Psikolojik danışmanlık hizmetlerimiz hakkında merak edilenler."
+        />
 
-        <div className="mx-auto max-w-3xl space-y-4">
+        <div className="mx-auto mt-12 max-w-3xl space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
