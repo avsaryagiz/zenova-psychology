@@ -9,7 +9,7 @@ import HeaderSearch from "./header-search";
 import HeaderNav from "./header-nav";
 import { ROUTES } from "@/config/routes";
 import { cn } from "@/lib/utils";
-import { PhoneIcon } from "@/components/icons";
+import { WhatsappIcon } from "@/components/icons";
 import { SOCIAL_MEDIA_ROUTES } from "@/config/social-media-routes";
 import Image from "next/image";
 import LogoType from "/public/images/logo/zenova-logo-type.png";
@@ -55,15 +55,13 @@ export default function Header() {
             />
           </Link>
           <div className="flex items-center gap-8 lg:gap-16">
-            <div className="text-primary flex items-center max-xl:flex-col max-xl:items-start max-md:hidden lg:gap-3">
-              <div className="flex items-center gap-3">
-                <PhoneIcon className="size-4 lg:size-7" />
-                <h3 className="max-xl:text-xl">Bizi Arayın:</h3>
-              </div>
-              <a href={`tel:${SOCIAL_MEDIA_ROUTES.PHONE.trim()}`}>
-                <h3 className="max-xl:text-xl">{SOCIAL_MEDIA_ROUTES.PHONE}</h3>
-              </a>
-            </div>
+            <a
+              href={`tel:${SOCIAL_MEDIA_ROUTES.PHONE.trim()}`}
+              className="flex items-center text-[#128c7e] transition-transform hover:scale-105 max-xl:flex-col max-xl:items-start max-md:hidden lg:gap-2"
+            >
+              <WhatsappIcon className="size-4 lg:size-9" />
+              <h3 className="max-xl:text-xl">{SOCIAL_MEDIA_ROUTES.PHONE}</h3>
+            </a>
             <Link
               className={cn(
                 buttonVariants({ variant: "default", size: "custom" }),

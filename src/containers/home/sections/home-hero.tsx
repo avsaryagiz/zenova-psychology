@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 const heroSlides = [
   {
     id: 1,
-    image: "/images/hero/profesyonel-destek.jpg",
+    image: "/images/home/hero/profesyonel-destek.jpg",
     title: "Profesyonel Psikolojik Destek",
     subtitle: "Uzman kadromuzla yanınızdayız",
     description:
@@ -25,7 +25,7 @@ const heroSlides = [
   },
   {
     id: 2,
-    image: "/images/hero/cocuk-ergen-terapisi.jpg",
+    image: "/images/home/hero/cocuk-ergen-terapisi.jpg",
     title: "Çocuk ve Ergen Terapisi",
     subtitle: "Çocuğunuzun gelişimi için",
     description:
@@ -33,7 +33,7 @@ const heroSlides = [
   },
   {
     id: 3,
-    image: "/images/hero/aile-terapisi.jpg",
+    image: "/images/home/hero/aile-terapisi.jpg",
     title: "Çift ve Aile Terapisi",
     subtitle: "İlişkilerinizi güçlendirin",
     description:

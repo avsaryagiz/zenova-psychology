@@ -24,11 +24,14 @@ import {
   SheetTrigger,
 } from "@/components/ui";
 
+import LogoType from "/public/images/logo/zenova-logo-type.png";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MENUS } from "@/config/menus";
 import SocialLinks from "../social-links";
+import { MenuIcon } from "@/components/icons";
+import { ROUTES } from "@/config/routes";
+import Image from "next/image";
 
 export default function HeaderNav() {
   const [open, setOpen] = useState(false);
@@ -40,14 +43,19 @@ export default function HeaderNav() {
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" aria-label="Menu">
-              <Menu className="h-5 w-5" />
+              <MenuIcon className="size-5" />
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-[300px] sm:w-[350px]">
-            <SheetHeader className="flex items-center justify-between border-b px-8 pb-4">
+            <SheetHeader className="flex items-center justify-between border-b px-8 pt-4 pb-1">
               <SheetTitle className="text-lg font-medium">
-                <Link href="/" className="font-heading">
-                  Zenova Psikoloji
+                <Link href={ROUTES.INTERNAL.HOME} className="font-heading">
+                  <Image
+                    src={LogoType}
+                    priority
+                    alt="Zenova Psikoloji Logo"
+                    className="h-12 w-auto"
+                  />
                 </Link>
               </SheetTitle>
             </SheetHeader>
@@ -61,11 +69,11 @@ export default function HeaderNav() {
                     className="w-full"
                   >
                     <AccordionItem value={menu.key}>
-                      <AccordionTrigger className="justify-start text-sm font-medium">
+                      <AccordionTrigger className="justify-start py-0 text-sm font-medium">
                         {menu.label}
                       </AccordionTrigger>
                       <AccordionContent>
-                        <div className="flex flex-col space-y-2 py-4 pl-4">
+                        <div className="flex flex-col gap-2 pt-4 pl-4">
                           {menu.children.map((item) => (
                             <Link
                               key={item.key}

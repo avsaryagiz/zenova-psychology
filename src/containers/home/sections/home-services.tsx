@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import {
+  AdolescentIcon,
   ChevronRightIcon,
   ChildIcon,
   CoupleIcon,
@@ -28,7 +29,7 @@ const services = [
     id: "bireysel-terapi",
     title: "Bireysel Terapi",
     icon: UserGearIcon,
-    image: "/images/hero/aile-terapisi.jpg",
+    image: "/images/home/services/bireysel-terapi.webp",
     shortDescription:
       "Kişisel sorunlarınızı çözmek ve kendinizi daha iyi anlamak için bire bir terapi seansları.",
     longDescription:
@@ -45,7 +46,7 @@ const services = [
     id: "cift-terapisi",
     title: "Çift Terapisi",
     icon: CoupleIcon,
-    image: "/images/hero/aile-terapisi.jpg",
+    image: "/images/home/services/cift-terapisi.webp",
     shortDescription:
       "İlişkinizi güçlendirmek ve iletişim sorunlarını çözmek için profesyonel destek.",
     longDescription:
@@ -62,7 +63,7 @@ const services = [
     id: "aile-terapisi",
     title: "Aile Terapisi",
     icon: FamilyIcon,
-    image: "/images/hero/aile-terapisi.jpg",
+    image: "/images/home/services/aile-terapisi.webp",
     shortDescription:
       "Aile içi ilişkileri güçlendirmek ve çatışmaları çözmek için aile odaklı terapi.",
     longDescription:
@@ -76,27 +77,46 @@ const services = [
     ],
   },
   {
-    id: "cocuk-ergen-terapisi",
-    title: "Çocuk ve Ergen Terapisi",
+    id: "cocuk-terapisi",
+    title: "Çocuk Terapisi",
     icon: ChildIcon,
-    image: "/images/hero/aile-terapisi.jpg",
+    image: "/images/home/services/cocuk-terapisi.webp",
     shortDescription:
       "Çocukların ve ergenlerin duygusal ve davranışsal sorunlarına yönelik özel terapi.",
     longDescription:
-      "Çocuk ve ergen terapisi, çocukların ve gençlerin duygusal, davranışsal ve gelişimsel zorluklarını ele almak için özel olarak tasarlanmıştır. Uzman çocuk psikologlarımız, dikkat eksikliği ve hiperaktivite bozukluğu (DEHB), kaygı, depresyon, davranış sorunları, okul zorlukları, akran ilişkileri, travma ve aile değişiklikleri gibi çeşitli konularda destek sağlar. Çocuğunuzun yaşına ve ihtiyaçlarına uygun oyun terapisi, sanat terapisi ve bilişsel davranışçı terapi gibi çeşitli teknikler kullanarak, çocuğunuzun duygusal iyilik halini ve sağlıklı gelişimini destekleriz.",
+      "Çocuk terapisi, çocukların duygusal, davranışsal ve gelişimsel zorluklarını ele almak amacıyla özel olarak yapılandırılmış bir terapi sürecidir. Uzman çocuk psikologlarımız, dikkat eksikliği ve hiperaktivite bozukluğu (DEHB), kaygı, davranış sorunları, okul uyum problemleri, travma ve aile içi değişiklikler gibi konularda destek sağlar. Çocuğun yaşına ve gelişim düzeyine uygun oyun terapisi, sanat terapisi ve bilişsel davranışçı terapi gibi çeşitli yöntemler kullanarak, çocuğun duygusal iyilik halini ve sağlıklı gelişimini desteklemeyi hedefleriz.",
     benefits: [
-      "Duygusal ifade becerilerini geliştirme",
-      "Özgüven ve öz-saygıyı artırma",
-      "Sosyal becerileri güçlendirme",
-      "Davranış sorunlarını azaltma",
-      "Akademik başarıyı destekleme",
+      "Duyguları tanıma ve ifade etme becerilerini geliştirme",
+      "Davranış sorunlarını anlama ve düzenleme",
+      "Aile içi iletişimi güçlendirme",
+      "Ebeveynlik becerilerini geliştirme",
+      "Zorlu yaşam geçişlerinde (taşınma, boşanma, yeni kardeş vb.) destek sağlama",
+      "Oyun ve sanat yoluyla duygusal gelişimi destekleme",
+    ],
+  },
+  {
+    id: "ergen-terapisi",
+    title: "Ergen Terapisi",
+    icon: AdolescentIcon,
+    image: "/images/home/services/ergen-terapisi.webp",
+    shortDescription:
+      "Çocukların ve ergenlerin duygusal ve davranışsal sorunlarına yönelik özel terapi.",
+    longDescription:
+      "Ergen terapisi, gençlerin ergenlik dönemine özgü duygusal ve davranışsal zorluklarla başa çıkmasına yardımcı olmak için tasarlanmıştır. Ergen psikologlarımız, depresyon, kaygı bozuklukları, öfke yönetimi, kimlik gelişimi, okul sorunları, akran ilişkileri, sınav kaygısı ve aile içi çatışmalar gibi alanlarda gençlere profesyonel destek sunar. Terapide, ergenin kendini ifade edebileceği güvenli bir alan oluşturarak, özgüvenini güçlendirmeyi, sosyal becerilerini geliştirmeyi ve sağlıklı bir bireysel gelişim süreci geçirmesini amaçlarız.",
+    benefits: [
+      "Kimlik gelişimini destekleme",
+      "Aile içi ve sosyal çatışmaları yapıcı şekilde çözme",
+      "Akran ilişkilerini sağlıklı kurma ve sürdürme",
+      "Sınav ve gelecek kaygısıyla başa çıkma",
+      "Duygusal dalgalanmaları ve öfke yönetimini ele alma",
+      "Aile bağlarını kuvvetlendirme",
     ],
   },
   {
     id: "travma-terapisi",
     title: "Travma Terapisi",
     icon: HeartCrackIcon,
-    image: "/images/hero/aile-terapisi.jpg",
+    image: "/images/home/services/travma-terapisi.webp",
     shortDescription:
       "Travmatik deneyimlerin üstesinden gelmek için özel terapi teknikleri.",
     longDescription:
@@ -113,7 +133,7 @@ const services = [
     id: "test-degerlendirme",
     title: "Psikolojik Testler",
     icon: MedicalTestIcon,
-    image: "/images/hero/aile-terapisi.jpg",
+    image: "/images/home/services/test-degerlendirme.webp",
     shortDescription:
       "Kişilik, zeka ve yetenek değerlendirmeleri için kapsamlı psikolojik testler.",
     longDescription:
@@ -149,12 +169,12 @@ export default function HomeServicesSection() {
           className="w-full"
         >
           <div className="mb-12 flex justify-center">
-            <TabsList className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-6">
+            <TabsList className="flex items-start gap-3">
               {services.map(({ id, icon: Icon, title }) => (
                 <TabsTrigger
                   key={id}
                   value={id}
-                  className="flex h-auto flex-col items-center gap-2 p-2"
+                  className="flex h-auto flex-col items-center gap-2 p-2 px-4"
                 >
                   <span className="text-accent-foreground">
                     <Icon className="size-6" />
@@ -171,10 +191,10 @@ export default function HomeServicesSection() {
               value={id}
               className="mt-0 focus-visible:ring-0 focus-visible:outline-none"
             >
-              <div className="grid items-center gap-8 md:grid-cols-2">
+              <div className="grid h-[500px] items-center gap-8 md:grid-cols-2">
                 <div className="order-2 md:order-1">
                   <h3 className="mb-4 text-2xl font-bold">{title}</h3>
-                  <p className="text-muted-foreground mb-6">
+                  <p className="text-muted-foreground mb-6 line-clamp-6">
                     {longDescription}
                   </p>
 
