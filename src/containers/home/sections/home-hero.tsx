@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Autoplay from "embla-carousel-autoplay";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Carousel,
@@ -12,7 +14,7 @@ import {
   type CarouselApi,
 } from "@/components/ui";
 import { ROUTES } from "@/config/routes";
-import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const heroSlides = [
   {
@@ -45,38 +47,24 @@ export default function HomeHeroSection() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
+  const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
+
   useEffect(() => {
     if (!api) return;
 
-    const handleSelect = () => {
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
-    };
-
-    api.on("select", handleSelect);
-    api.on("reInit", handleSelect);
-
-    return () => {
-      api.off("select", handleSelect);
-      api.off("reInit", handleSelect);
-    };
-  }, [api]);
-
-  // Auto-play functionality
-  useEffect(() => {
-    if (!api) return;
-
-    const interval = setInterval(() => {
-      api.scrollNext();
-    }, 5000); // Change slide every 5 seconds
-
-    return () => clearInterval(interval);
+    });
   }, [api]);
 
   return (
-    <section id="hero-section" className="relative w-full overflow-hidden">
+    <section id="hero" className="relative w-full overflow-hidden">
       <Carousel
         setApi={setApi}
         className="w-full"
+        plugins={[plugin.current]}
         opts={{
           align: "start",
           loop: true,
@@ -96,32 +84,36 @@ export default function HomeHeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
                 <div className="absolute inset-0 flex items-center">
                   <div className="container">
-                    <div className="max-w-xl space-y-4 text-white">
+                    <div className="max-w-[280px] space-y-4 text-white max-sm:mx-auto sm:max-w-xl">
                       <p className="text-primary-foreground/80 text-sm font-medium md:text-base">
                         {slide.subtitle}
                       </p>
-                      <h1 className="text-3xl leading-tight font-bold md:text-5xl">
-                        {slide.title}
-                      </h1>
-                      <p className="text-primary-foreground/90 text-base md:text-lg">
+                      <h1>{slide.title}</h1>
+                      <p className="text-primary-foreground/90 text-sm sm:text-base md:text-lg">
                         {slide.description}
                       </p>
                       <div className="flex flex-wrap gap-4 pt-2">
                         <Link
                           href={ROUTES.INTERNAL.APPOINTMENT}
-                          className={buttonVariants({
-                            size: "lg",
-                          })}
+                          className={cn(
+                            buttonVariants({
+                              size: "lg",
+                            }),
+                            "max-sm:h-8 max-sm:gap-1.5 max-sm:px-3 max-sm:has-[>svg]:px-2.5",
+                          )}
                           role="button"
                         >
                           Randevu Al
                         </Link>
                         <Link
                           href={ROUTES.INTERNAL.SERVICES.ROOT}
-                          className={buttonVariants({
-                            variant: "outline",
-                            size: "lg",
-                          })}
+                          className={cn(
+                            buttonVariants({
+                              variant: "outline",
+                              size: "lg",
+                            }),
+                            "max-sm:h-8 max-sm:gap-1.5 max-sm:px-3 max-sm:has-[>svg]:px-2.5",
+                          )}
                           role="button"
                         >
                           Hizmetlerimiz
@@ -139,10 +131,11 @@ export default function HomeHeroSection() {
           {heroSlides.map((_, index) => (
             <Button
               key={index}
-              variant="ghost"
-              size="icon"
-              className={`h-2 w-10 rounded-full p-0 ${index === current ? "bg-primary" : "bg-primary-foreground/30"}`}
+              variant="muted"
+              size="indicator"
+              className={`${index === current ? "bg-primary" : ""}`}
               onClick={() => api?.scrollTo(index)}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>

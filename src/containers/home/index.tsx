@@ -1,11 +1,21 @@
-import HomeHeroSection from "./sections/home-hero";
-import HomeServicesSection from "./sections/home-services";
+import {
+  HomeCTASection,
+  HomeFAQSection,
+  HomeHeroSection,
+  HomeServicesSection,
+  HomeTeamSection,
+  HomeTestimonialsSection,
+} from "./sections";
 
 export default function HomeContainer() {
   return (
     <main>
       <HomeHeroSection />
       <HomeServicesSection />
+      <HomeCTASection />
+      <HomeTestimonialsSection />
+      <HomeTeamSection />
+      <HomeFAQSection />
     </main>
   );
 }

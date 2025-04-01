@@ -8,7 +8,7 @@ import HeaderBanner from "./header-banner";
 import HeaderSearch from "./header-search";
 import HeaderNav from "./header-nav";
 import { ROUTES } from "@/config/routes";
-import { cn } from "@/lib/utils";
+import { cn, formatPhoneNumber } from "@/lib/utils";
 import { WhatsappIcon } from "@/components/icons";
 import { SOCIAL_MEDIA_ROUTES } from "@/config/social-media-routes";
 import Image from "next/image";
@@ -56,7 +56,7 @@ export default function Header() {
           </Link>
           <div className="flex items-center gap-8 lg:gap-16">
             <a
-              href={`tel:${SOCIAL_MEDIA_ROUTES.PHONE.trim()}`}
+              href={`https://wa.me/${formatPhoneNumber(SOCIAL_MEDIA_ROUTES.PHONE)}`}
               className="flex items-center text-[#128c7e] transition-transform hover:scale-105 max-xl:flex-col max-xl:items-start max-md:hidden lg:gap-2"
             >
               <WhatsappIcon className="size-4 lg:size-9" />

@@ -5,58 +5,66 @@ import {
   LocationIcon,
   MailIcon,
   PhoneIcon,
+  WhatsappIcon,
   XIcon,
   YouTubeIcon,
 } from "../icons";
 import { SOCIAL_MEDIA_ROUTES } from "@/config/social-media-routes";
+import { formatPhoneNumber } from "@/lib/utils";
 
 export const CONTACT_INFO = [
   {
-    Icon: LocationIcon,
-    text: SOCIAL_MEDIA_ROUTES.LOCATION,
-    link: SOCIAL_MEDIA_ROUTES.MAP,
+    icon: LocationIcon,
+    label: SOCIAL_MEDIA_ROUTES.LOCATION,
+    href: SOCIAL_MEDIA_ROUTES.MAP,
   },
   {
-    Icon: MailIcon,
-    text: SOCIAL_MEDIA_ROUTES.MAIL,
-    link: `mailto:${SOCIAL_MEDIA_ROUTES.MAIL}`,
+    icon: MailIcon,
+    label: SOCIAL_MEDIA_ROUTES.MAIL,
+    href: `mailto:${SOCIAL_MEDIA_ROUTES.MAIL}`,
   },
   {
-    Icon: PhoneIcon,
-    text: SOCIAL_MEDIA_ROUTES.PHONE,
-    link: `tel:${SOCIAL_MEDIA_ROUTES.PHONE.trim()}`,
+    icon: PhoneIcon,
+    label: SOCIAL_MEDIA_ROUTES.PHONE,
+    href: `tel:${SOCIAL_MEDIA_ROUTES.PHONE.trim()}`,
   },
 ];
 
 export const SOCIAL_LINK_CONTENTS = {
   facebook: {
-    href: SOCIAL_MEDIA_ROUTES.FACEBOOK,
     icon: FacebookIcon,
     label: "Facebook",
+    href: SOCIAL_MEDIA_ROUTES.FACEBOOK,
     title: "Facebook Sayfamızı Ziyaret Edin",
   },
   instagram: {
-    href: SOCIAL_MEDIA_ROUTES.INSTAGRAM,
     icon: InstagramIcon,
     label: "Instagram",
+    href: SOCIAL_MEDIA_ROUTES.INSTAGRAM,
     title: "Instagram'da Bizi Takip Edin",
   },
   linkedin: {
-    href: SOCIAL_MEDIA_ROUTES.LINKEDIN,
     icon: LinkedinIcon,
     label: "LinkedIn",
+    href: SOCIAL_MEDIA_ROUTES.LINKEDIN,
     title: "LinkedIn Profilimizi Görüntüleyin",
   },
   x: {
-    href: SOCIAL_MEDIA_ROUTES.X,
     icon: XIcon,
     label: "Twitter",
+    href: SOCIAL_MEDIA_ROUTES.X,
     title: "X (Twitter) Hesabımıza Göz Atın",
   },
   youtube: {
-    href: SOCIAL_MEDIA_ROUTES.YOUTUBE,
     icon: YouTubeIcon,
     label: "YouTube",
+    href: SOCIAL_MEDIA_ROUTES.YOUTUBE,
     title: "YouTube Kanalımıza Abone Olun",
+  },
+  whatsapp: {
+    icon: WhatsappIcon,
+    label: SOCIAL_MEDIA_ROUTES.PHONE,
+    href: `https://wa.me/${formatPhoneNumber(SOCIAL_MEDIA_ROUTES.PHONE)}`,
+    title: "WhatsApp ile Bize Ulaşın",
   },
 };

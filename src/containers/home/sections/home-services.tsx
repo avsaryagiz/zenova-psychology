@@ -152,10 +152,13 @@ export default function HomeServicesSection() {
   const [activeTab, setActiveTab] = useState(services[0].id);
 
   return (
-    <section className="container flex min-h-screen flex-col items-center justify-center">
-      <div className="max-md:hidden">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold">Hizmetlerimiz</h2>
+    <section
+      id="hizmetlerimiz"
+      className="container flex min-h-screen flex-col items-center justify-center max-md:py-10"
+    >
+      <div className="flex flex-col gap-12">
+        <div className="text-center">
+          <h2 className="mx-auto mb-4 w-fit border-b">Hizmetlerimiz</h2>
           <p className="text-muted-foreground mx-auto max-w-2xl">
             Zenova Psikoloji olarak, bireylerin ve ailelerin ruh sağlığı
             ihtiyaçlarına yönelik kapsamlı ve profesyonel hizmetler sunuyoruz.
@@ -166,7 +169,7 @@ export default function HomeServicesSection() {
           defaultValue={services[0].id}
           value={activeTab}
           onValueChange={setActiveTab}
-          className="w-full"
+          className="w-full max-md:hidden"
         >
           <div className="mb-12 flex justify-center">
             <TabsList className="flex items-start gap-3">
@@ -174,7 +177,7 @@ export default function HomeServicesSection() {
                 <TabsTrigger
                   key={id}
                   value={id}
-                  className="flex h-auto flex-col items-center gap-2 p-2 px-4"
+                  className="flex h-auto cursor-pointer flex-col items-center gap-2 p-2 px-4"
                 >
                   <span className="text-accent-foreground">
                     <Icon className="size-6" />
@@ -191,7 +194,7 @@ export default function HomeServicesSection() {
               value={id}
               className="mt-0 focus-visible:ring-0 focus-visible:outline-none"
             >
-              <div className="grid h-[500px] items-center gap-8 md:grid-cols-2">
+              <div className="grid h-[500px] gap-8 md:grid-cols-2">
                 <div className="order-2 md:order-1">
                   <h3 className="mb-4 text-2xl font-bold">{title}</h3>
                   <p className="text-muted-foreground mb-6 line-clamp-6">
@@ -225,7 +228,7 @@ export default function HomeServicesSection() {
                   </Link>
                 </div>
 
-                <div className="relative order-1 h-[300px] overflow-hidden rounded-lg md:order-2 md:h-[400px]">
+                <div className="relative order-1 my-auto h-[300px] overflow-hidden rounded-lg md:order-2 md:h-[400px]">
                   <Image
                     src={image || "/placeholder.svg"}
                     alt={title}
