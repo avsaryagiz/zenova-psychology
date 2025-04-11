@@ -8,7 +8,12 @@ export default function TitleSection({
   descriptionClassName,
 }: ITitleSection) {
   return (
-    <section className={cn("flex flex-col items-center gap-4", titleClassName)}>
+    <section
+      className={cn(
+        "flex flex-col items-center gap-4 max-sm:items-center",
+        titleClassName,
+      )}
+    >
       <h2 className="border-b">{title}</h2>
       {description ? (
         typeof description === "string" ? (

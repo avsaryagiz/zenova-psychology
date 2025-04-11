@@ -19,6 +19,8 @@ import {
   Button,
   Card,
   CardContent,
+  CardFooter,
+  CardHeader,
 } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import TitleSection from "@/components/shared/title-section";
@@ -96,93 +98,87 @@ export default function TestimonialsSection() {
             hayatınızı değiştirebiliriz."
         />
 
-        <div className="relative">
-          <Carousel
-            setApi={setApi}
-            className="w-full max-sm:mx-auto max-sm:max-w-sm"
-            plugins={[plugin.current]}
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-          >
-            <CarouselContent>
-              {testimonials.map(({ id, image, name, quote, rating, title }) => (
-                <CarouselItem
-                  key={id}
-                  className="sm:basis-1/2 sm:pl-4 lg:basis-1/3"
-                >
-                  <div className="h-full">
-                    <Card className="bg-card h-full border">
-                      <CardContent className="flex h-full flex-col p-4 sm:p-6">
-                        <div className="flex items-start justify-between">
-                          <CommentsIcon className="text-primary mb-3 h-6 w-6 md:h-8 md:w-8" />
-                          <div className="flex">
-                            {Array.from({ length: 5 }).map((_, i) => (
-                              <StarIcon
-                                key={i}
-                                className={cn(
-                                  "h-3 w-3 md:h-4 md:w-4",
-                                  i < rating
-                                    ? "text-primary fill-primary"
-                                    : "text-muted-foreground",
-                                )}
-                              />
-                            ))}
-                          </div>
-                        </div>
-
-                        <p className="text-muted-foreground mb-4 text-sm leading-relaxed italic md:text-base">
-                          &quot;{quote}&quot;
-                        </p>
-
-                        <div className="mt-auto flex items-center">
-                          <Avatar className="relative mr-3 size-10 overflow-hidden rounded-full border md:mr-4 md:size-12">
-                            <AvatarImage
-                              src={image}
-                              alt="Zenova Psikoloji Danışanı"
-                              className="object-contain"
-                            />
-                            <AvatarFallback className="bg-transparent">
-                              <Image
-                                src="/images/logo/zenova-logo-mark.png"
-                                alt="Zenova Psikoloji Danışanı"
-                                fill
-                                className="object-contain"
-                              />
-                            </AvatarFallback>
-                          </Avatar>
-                          <div>
-                            <h4 className="text-sm font-semibold md:text-base">
-                              {name}
-                            </h4>
-                            <p className="text-muted-foreground text-xs md:text-sm">
-                              {title}
-                            </p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="absolute top-1/2 left-0 hidden h-8 w-8 -translate-y-1/2 sm:flex md:h-10 md:w-10" />
-            <CarouselNext className="absolute top-1/2 right-0 hidden h-8 w-8 -translate-y-1/2 sm:flex md:h-10 md:w-10" />
-          </Carousel>
-
-          <div className="mt-6 flex justify-center gap-1 md:mt-8 md:gap-2">
-            {testimonials.map((_, index) => (
-              <Button
-                key={index}
-                variant="muted"
-                size="indicator"
-                className={`${index === current ? "bg-primary" : ""}`}
-                onClick={() => api?.scrollTo(index)}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
+        <Carousel
+          setApi={setApi}
+          className="w-full max-sm:mx-auto max-sm:max-w-xs"
+          plugins={[plugin.current]}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent>
+            {testimonials.map(({ id, image, name, quote, rating, title }) => (
+              <CarouselItem
+                key={id}
+                className="sm:basis-1/2 sm:pl-4 lg:basis-1/3"
+              >
+                <Card>
+                  <CardHeader className="flex items-start justify-between">
+                    <CommentsIcon className="text-primary mb-3 h-6 w-6 md:h-8 md:w-8" />
+                    <div className="flex">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <StarIcon
+                          key={i}
+                          className={cn(
+                            "h-3 w-3 md:h-4 md:w-4",
+                            i < rating
+                              ? "text-primary fill-primary"
+                              : "text-muted-foreground",
+                          )}
+                        />
+                      ))}
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed italic md:text-base">
+                      &quot;{quote}&quot;
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Avatar className="relative mr-3 size-10 overflow-hidden rounded-full border md:mr-4 md:size-12">
+                      <AvatarImage
+                        src={image}
+                        alt="Zenova Psikoloji Danışanı"
+                        className="object-contain"
+                      />
+                      <AvatarFallback className="bg-transparent">
+                        <Image
+                          src="/images/logo/zenova-logo-mark.png"
+                          alt="Zenova Psikoloji Danışanı"
+                          fill
+                          className="object-contain"
+                        />
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h4 className="text-sm font-semibold md:text-base">
+                        {name}
+                      </h4>
+                      <p className="text-muted-foreground text-xs md:text-sm">
+                        {title}
+                      </p>
+                    </div>
+                  </CardFooter>
+                </Card>
+              </CarouselItem>
             ))}
-          </div>
+          </CarouselContent>
+          <CarouselPrevious className="absolute top-1/2 left-0 hidden h-8 w-8 -translate-y-1/2 sm:flex md:h-10 md:w-10" />
+          <CarouselNext className="absolute top-1/2 right-0 hidden h-8 w-8 -translate-y-1/2 sm:flex md:h-10 md:w-10" />
+        </Carousel>
+
+        <div className="mt-6 flex justify-center gap-1 md:mt-8 md:gap-2">
+          {testimonials.map((_, index) => (
+            <Button
+              key={index}
+              variant="muted"
+              size="indicator"
+              className={`${index === current ? "bg-primary" : ""}`}
+              onClick={() => api?.scrollTo(index)}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

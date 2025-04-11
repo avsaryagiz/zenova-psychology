@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PlayIcon, SearchIcon } from "@/components/icons";
 import {
   Badge,
@@ -9,7 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui";
 import type { IVideoItem } from "@/types/shared-types";
-import Image from "next/image";
 
 interface IVideoGridSectionProps {
   videos: IVideoItem[];
@@ -81,12 +81,14 @@ function VideoCard({
           fill
           className="object-cover transition-transform duration-300 hover:scale-105"
         />
-        <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity hover:opacity-100">
+        <div
+          className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/30 opacity-0 transition-opacity hover:opacity-100"
+          onClick={onPlay}
+        >
           <Button
             variant="secondary"
             size="icon"
             className="h-12 w-12 rounded-full"
-            onClick={onPlay}
           >
             <PlayIcon className="size-6" />
           </Button>

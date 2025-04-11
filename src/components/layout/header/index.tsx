@@ -83,7 +83,7 @@ export default function Header() {
             </div>
           </motion.nav>
         ) : (
-          <nav className="shadow-sm">
+          <nav className="border-b shadow-md">
             <div className="container flex items-center justify-between gap-4 py-2">
               <HeaderNav />
               <HeaderSearch />

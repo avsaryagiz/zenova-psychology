@@ -1,9 +1,9 @@
 import Image from "next/image";
+import { BarChartIcon, ChevronRightIcon, ClockIcon } from "@/components/icons";
 import { AppointmentButton } from "@/components/shared/appointment-button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
-import { BarChartIcon, ChevronRightIcon, ClockIcon } from "@/components/icons";
-import { SERVICES_ITEMS } from "@/config/constants/services-dummy-data";
 import TitleSection from "@/components/shared/title-section";
+import { SERVICES_ITEMS } from "@/config/constants/services-dummy-data";
 
 export default function DetailedServicesSection() {
   return (
@@ -15,7 +15,7 @@ export default function DetailedServicesSection() {
         />
 
         <Tabs defaultValue={SERVICES_ITEMS[0].id} className="mt-12 w-full">
-          <TabsList className="mb-8 flex w-full flex-wrap justify-center gap-2">
+          <TabsList className="mb-8 flex h-fit w-full flex-wrap justify-center gap-2">
             {SERVICES_ITEMS.map(({ id, title }) => (
               <TabsTrigger key={id} value={id} id={id}>
                 {title}

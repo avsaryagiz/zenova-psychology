@@ -9,7 +9,7 @@ import { MENUS } from "@/config/menus";
 
 export default function Footer() {
   return (
-    <footer className="text-card-foreground border-t py-6">
+    <footer className="text-card-foreground border-t py-6 shadow-inner">
       <div className="container">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -20,7 +20,7 @@ export default function Footer() {
                 src={LogoType}
                 priority
                 alt="Zenova Psikoloji Logo"
-                className="h-16 w-auto max-sm:hidden"
+                className="h-16 w-auto"
               />
             </Link>
             <p className="text-muted-foreground text-sm">

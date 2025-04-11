@@ -1,3 +1,20 @@
+export interface Post {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  category: string;
+  categoryName: string;
+  authorImage?: string;
+  authorTitle?: string;
+  content?: string | TrustedHTML;
+  author: string;
+  date: string;
+  readTime: string;
+  featured: boolean;
+}
+
 export interface IFAQItem {
   question: string;
   answer: string;
@@ -8,6 +25,12 @@ export interface ITitleSection {
   description?: string | React.ReactNode;
   titleClassName?: string;
   descriptionClassName?: string;
+}
+
+export interface IProcessItem {
+  title: string;
+  description: string;
+  image: string;
 }
 
 export interface IServiceItem {
