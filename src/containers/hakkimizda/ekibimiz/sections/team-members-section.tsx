@@ -195,65 +195,61 @@ const teamMembers = [
 
 export default function TeamMembersSection() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="container">
-        <Tabs defaultValue="tum" className="w-full">
-          <div className="mb-8 flex justify-center">
-            <TabsList>
-              <TabsTrigger value="tum">Tüm Ekip</TabsTrigger>
-              <TabsTrigger value="klinik">Klinik Psikologlar</TabsTrigger>
-              <TabsTrigger value="aile">Aile Terapistleri</TabsTrigger>
-              <TabsTrigger value="cocuk">Çocuk Psikologları</TabsTrigger>
-            </TabsList>
-          </div>
+    <section className="container py-16 md:py-24">
+      <Tabs defaultValue="tum" className="w-full">
+        <TabsList className="mx-auto mb-8 flex h-fit flex-wrap justify-center">
+          <TabsTrigger value="tum">Tüm Ekip</TabsTrigger>
+          <TabsTrigger value="klinik">Klinik Psikologlar</TabsTrigger>
+          <TabsTrigger value="aile">Aile Terapistleri</TabsTrigger>
+          <TabsTrigger value="cocuk">Çocuk Psikologları</TabsTrigger>
+        </TabsList>
 
-          <TabsContent value="tum" className="mt-0">
-            <div className="grid auto-rows-fr gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {teamMembers.map((member) => (
+        <TabsContent value="tum" className="mt-0">
+          <div className="grid auto-rows-fr gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {teamMembers.map((member) => (
+              <TeamMemberCard key={member.id} member={member} />
+            ))}
+          </div>
+        </TabsContent>
+
+        <TabsContent value="klinik" className="mt-0">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {teamMembers
+              .filter((member) => member.category === "klinik")
+              .map((member) => (
                 <TeamMemberCard key={member.id} member={member} />
               ))}
-            </div>
-          </TabsContent>
+          </div>
+        </TabsContent>
 
-          <TabsContent value="klinik" className="mt-0">
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {teamMembers
-                .filter((member) => member.category === "klinik")
-                .map((member) => (
-                  <TeamMemberCard key={member.id} member={member} />
-                ))}
-            </div>
-          </TabsContent>
+        <TabsContent value="aile" className="mt-0">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {teamMembers
+              .filter((member) => member.category === "aile")
+              .map((member) => (
+                <TeamMemberCard key={member.id} member={member} />
+              ))}
+          </div>
+        </TabsContent>
 
-          <TabsContent value="aile" className="mt-0">
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {teamMembers
-                .filter((member) => member.category === "aile")
-                .map((member) => (
-                  <TeamMemberCard key={member.id} member={member} />
-                ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="cocuk" className="mt-0">
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {teamMembers
-                .filter((member) => member.category === "cocuk")
-                .map((member) => (
-                  <TeamMemberCard key={member.id} member={member} />
-                ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-      </div>
+        <TabsContent value="cocuk" className="mt-0">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {teamMembers
+              .filter((member) => member.category === "cocuk")
+              .map((member) => (
+                <TeamMemberCard key={member.id} member={member} />
+              ))}
+          </div>
+        </TabsContent>
+      </Tabs>
     </section>
   );
 }
 
 function TeamMemberCard({ member }: { member: ITeamMember }) {
   return (
-    <Card className="bg-card flex h-full flex-col gap-0 overflow-hidden border py-0">
-      <div className="relative aspect-square h-auto w-full overflow-hidden">
+    <Card className="bg-card flex flex-col gap-0 overflow-hidden border py-0">
+      <div className="relative aspect-square h-80 w-auto overflow-hidden">
         <Image
           src={member.image || "/placeholder.svg"}
           alt={member.name}

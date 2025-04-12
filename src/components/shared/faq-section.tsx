@@ -20,7 +20,7 @@ export default function FAQSection({
   return (
     <section
       id={id}
-      className="bg-card flex min-h-screen flex-col items-center py-20 shadow-inner md:py-32 2xl:min-h-[90svh]"
+      className="bg-card flex min-h-[80svh] flex-col items-center py-20 shadow-inner md:py-32"
     >
       <div className="container">
         <TitleSection
@@ -35,7 +35,7 @@ export default function FAQSection({
                 <AccordionTrigger className="text-left md:text-lg">
                   {question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-muted-foreground ml-2 pb-4">
                   {answer}
                 </AccordionContent>
               </AccordionItem>

@@ -1,20 +1,23 @@
-import { FacilitiesSection, LocationSection } from "./sections";
+import {
+  FacilitiesSection,
+  LocationSection,
+  OfficeGallerySection,
+} from "./sections";
 import HeroSection from "@/components/shared/hero-section";
 import FAQSection from "@/components/shared/faq-section";
 import { OFFICE_FAQ_ITEMS } from "@/config/constants/faq-dummy-data";
+import CTASection from "@/components/shared/cta-section";
 
 export default function OfficeContainer() {
   return (
     <main className="flex flex-col">
       <HeroSection
-        id="zenova-psikoloji-ofisi"
         title="Zenova Psikoloji Ofisi"
         description="Zenova Psikoloji'nin modern ve rahatlatıcı ofis ortamını keşfedin.
             Konforlu ve güvenli bir atmosferde profesyonel psikolojik destek
             hizmetlerimizden yararlanın."
       />
-      {/* @todo make the section below mobile responsive */}
-      {/* <OfficeGallerySection /> */}
+      <OfficeGallerySection />
       <LocationSection />
       <FacilitiesSection />
       <FAQSection
@@ -24,6 +27,11 @@ export default function OfficeContainer() {
             "Ofisimiz hakkında merak edilen soruların cevaplarını burada bulabilirsiniz.",
         }}
         ITEMS={OFFICE_FAQ_ITEMS}
+      />
+      <CTASection
+        title="Ofisimizi Ziyaret Edin"
+        description="Zenova Psikoloji'nin rahatlatıcı ve güvenli ortamında profesyonel
+          destek almak için hemen randevu alın."
       />
     </main>
   );

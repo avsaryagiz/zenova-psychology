@@ -3,7 +3,7 @@ import TitleSection from "@/components/shared/title-section";
 import {
   AwardIcon,
   CheckCircleIcon,
-  HeartCrackIcon,
+  HeartIcon,
   ShieldIcon,
   UsersIcon,
 } from "@/components/icons";
@@ -21,11 +21,22 @@ export default function OurValuesSection() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Card className="bg-card border">
             <CardContent className="flex flex-col items-center p-6 text-center">
-              <HeartCrackIcon className="text-primary mb-4 h-12 w-12" />
+              <HeartIcon className="text-primary mb-4 h-12 w-12" />
               <h3 className="mb-2 text-xl font-semibold">Empati</h3>
               <p className="text-muted-foreground">
                 Her danışanımızın deneyimini anlamak ve onların perspektifinden
                 bakabilmek için içten bir çaba gösteriyoruz.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-card border">
+            <CardContent className="flex flex-col items-center p-6 text-center">
+              <AwardIcon className="text-primary mb-4 h-12 w-12" />
+              <h3 className="mb-2 text-xl font-semibold">Profesyonellik</h3>
+              <p className="text-muted-foreground">
+                En yüksek etik standartlara bağlı kalarak, profesyonel ve
+                kaliteli hizmet sunmayı taahhüt ediyoruz.
               </p>
             </CardContent>
           </Card>
@@ -59,17 +70,6 @@ export default function OurValuesSection() {
               <p className="text-muted-foreground">
                 Farklı geçmişlere, kültürlere ve deneyimlere sahip tüm bireylere
                 saygılı ve kapsayıcı bir ortam sunuyoruz.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-card border">
-            <CardContent className="flex flex-col items-center p-6 text-center">
-              <AwardIcon className="text-primary mb-4 h-12 w-12" />
-              <h3 className="mb-2 text-xl font-semibold">Profesyonellik</h3>
-              <p className="text-muted-foreground">
-                En yüksek etik standartlara bağlı kalarak, profesyonel ve
-                kaliteli hizmet sunmayı taahhüt ediyoruz.
               </p>
             </CardContent>
           </Card>
