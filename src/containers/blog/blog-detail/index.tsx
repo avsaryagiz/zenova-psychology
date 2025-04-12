@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -68,26 +67,26 @@ export default function BlogDetailContainer() {
     }
   }, [slug]);
 
-  interface CommentReply {
+  /*   interface CommentReply {
     id: number;
     name: string;
     date: string;
     content: string;
-  }
+  } */
 
-  interface Comment {
+  /*   interface Comment {
     id: number;
     name: string;
     date: string;
     content: string;
     replies: CommentReply[];
-  }
+  } */
 
-  interface CommentStatus {
+  /*   interface CommentStatus {
     type: string;
     message: string;
   }
-
+ */
   interface CommentFormElements extends HTMLFormControlsCollection {
     name: HTMLInputElement;
     email: HTMLInputElement;
@@ -237,7 +236,7 @@ export default function BlogDetailContainer() {
       </section>
 
       {/* Comments Section */}
-      <section className="border-t shadow-inner py-12 md:py-16">
+      <section className="border-t py-12 shadow-inner md:py-16">
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-8 text-2xl font-bold">

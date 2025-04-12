@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import {
   Button,
   Card,
@@ -20,9 +20,7 @@ export default function ContactForm() {
   const [formStatus, setFormStatus] = useState({ type: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  interface FormEvent extends React.FormEvent<HTMLFormElement> {}
-
-  const handleSubmit = async (e: FormEvent): Promise<void> => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setIsSubmitting(true);
 
