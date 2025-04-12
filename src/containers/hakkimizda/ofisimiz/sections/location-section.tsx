@@ -1,6 +1,7 @@
 import { BusIcon, CarIcon, TrainIcon } from "@/components/icons";
 import TitleSection from "@/components/shared/title-section";
 import OfficeInfo from "@/components/shared/office-info";
+import { GOOGLE_MAPS_IFRAME_URL } from "@/config";
 
 export default function LocationSection() {
   return (
@@ -40,9 +41,9 @@ export default function LocationSection() {
             </div>
           </div>
 
-          <div className="h-[400px] overflow-hidden rounded-lg border">
+          <div className="h-[450px] overflow-hidden rounded-lg border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.1233310971!2d29.026516776083867!3d40.99050197135312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2zS2FkxLFrw7Z5LCBNb2RhIENkLiwgMzQ3MTAgS2FkxLFrw7Z5L8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1711918400000!5m2!1str!2str"
+              src={GOOGLE_MAPS_IFRAME_URL}
               width="100%"
               height="100%"
               style={{ border: 0 }}
