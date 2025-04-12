@@ -8,7 +8,6 @@ export default function ContactContainer() {
   return (
     <main className="flex flex-col">
       <HeroSection
-        id="iletisim"
         title="Bize Ulaşın"
         description="Zenova Psikoloji ile iletişime geçin. Sorularınız, randevu talepleriniz veya geri bildirimleriniz için bize ulaşabilirsiniz."
       />

@@ -11,7 +11,6 @@ export default function MeetUsContainer() {
   return (
     <main className="flex flex-col">
       <HeroSection
-        id="bizi-taniyin-hero"
         title="Zenova Psikoloji'yi Tanıyın"
         description="Ruh sağlığı yolculuğunuzda yanınızda olmak için buradayız.
             Profesyonel ve empatik yaklaşımımızla, hayatınızda pozitif

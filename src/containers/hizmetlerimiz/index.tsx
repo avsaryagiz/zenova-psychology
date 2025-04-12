@@ -10,7 +10,6 @@ export default function ServicesContainer() {
   return (
     <main className="flex flex-col">
       <HeroSection
-        id="hizmetlerimiz"
         title="Zenova Psikoloji Hizmetleri"
         description="Zenova Psikoloji olarak, bireylerin ve ailelerin ruh sağlığı ihtiyaçlarına yönelik kapsamlı ve profesyonel hizmetler sunuyoruz. Her danışanımızın benzersiz ihtiyaçlarına uygun, kanıta dayalı terapi yaklaşımları kullanıyoruz."
       />

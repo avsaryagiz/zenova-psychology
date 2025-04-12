@@ -28,7 +28,6 @@ export default function VideoGalleryContainer() {
   return (
     <main className="flex flex-col">
       <HeroSection
-        id="video-galeri"
         title="Video Galeri"
         description=" Zenova Psikoloji'nin eğitim videoları, danışan deneyimleri ve
               merkez tanıtımlarını içeren video galerimize hoş geldiniz. Ruh

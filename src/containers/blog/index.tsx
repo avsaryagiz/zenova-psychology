@@ -40,7 +40,6 @@ export default function BlogContainer() {
     <main className="flex flex-col">
       {/* Hero Section */}
       <HeroSection
-        id="hizmetlerimiz"
         title="Blog"
         description=" Ruh sağlığı, psikoloji ve kişisel gelişim konularında uzmanlarımızın kaleme aldığı bilgilendirici yazılar ve makaleler."
       />

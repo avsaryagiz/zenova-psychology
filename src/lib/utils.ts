@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import slugifyFn from "slugify";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -32,4 +33,11 @@ export function isValidEmail(email: string) {
 export function isValidPhoneNumber(phone: string) {
   const phoneRegex = /^\+?[1-9]\d{1,14}$/;
   return phoneRegex.test(phone);
+}
+
+export function slugify(str: string) {
+  return slugifyFn(str, {
+    lower: true,
+    remove: /[*+~.()'"!:@]/g,
+  });
 }
