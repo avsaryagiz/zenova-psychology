@@ -1,3 +1,35 @@
+interface IImageFormat {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
+  name: string;
+  size: number;
+  width: number;
+  height: number;
+  sizeInBytes?: number;
+  path?: string | null;
+}
+
+export interface IImage extends IImageFormat {
+  id?: number;
+  documentId?: string;
+  alternativeText: string | null;
+  caption?: string | null;
+  formats?: {
+    large?: IImageFormat;
+    small?: IImageFormat;
+    medium?: IImageFormat;
+    thumbnail?: IImageFormat;
+  };
+  previewUrl?: string | null;
+  provider?: string;
+  provider_metadata?: Record<string, unknown>;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+}
+
 export interface Post {
   id: number;
   slug: string;
@@ -13,6 +45,34 @@ export interface Post {
   date: string;
   readTime: string;
   featured: boolean;
+}
+
+export interface IAuthor {
+  id?: number;
+  documentId?: string;
+  name: string;
+  slug: string;
+  bio?: string;
+  image: IImage;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+}
+
+export interface IPost {
+  id: number;
+  documentId?: string;
+  title: string;
+  slug: string;
+  content: RootNode[];
+  cover_image: IImage;
+  meta_title?: string;
+  meta_description?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt: string;
+  categories: ICategory[];
+  author: IAuthor;
 }
 
 export interface IFAQItem {

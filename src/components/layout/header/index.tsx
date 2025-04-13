@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import LogoType from "/public/images/logo/zenova-logo-type.png";
 import LogoMark from "/public/images/logo/zenova-logo-mark.png";
-import { AppointmentButton } from "@/components/shared/appointment-button";
+import { AppointmentButton } from "@/components/shared";
 import { WhatsappIcon } from "@/components/icons";
 import HeaderBanner from "./header-banner";
 import HeaderSearch from "./header-search";

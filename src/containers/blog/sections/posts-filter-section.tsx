@@ -1,3 +1,4 @@
+"use client";
 import { SearchIcon } from "@/components/icons";
 import {
   Input,
@@ -7,25 +8,27 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui";
-import { CATEGORIES } from "@/config/constants/blog-dummy-data";
+import { ROUTES } from "@/config/routes";
+import { Category, Post } from "@/types/strapi_types";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 interface IPostFilterSectionProps {
-  setCurrentPage: (page: number) => void;
-  selectedCategory: string;
-  setSelectedCategory: (category: string) => void;
-  searchQuery: string;
-  setSearchQuery: (query: string) => void;
+  categories: Category[];
+  activeCategory: string;
+  posts: Post[];
 }
 
 export default function PostFilterSection({
-  setCurrentPage,
-  selectedCategory,
-  setSelectedCategory,
-  searchQuery,
-  setSearchQuery,
+  categories,
+  activeCategory,
 }: IPostFilterSectionProps) {
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    activeCategory ? activeCategory : "Tüm Kategoriler",
+  );
+  const router = useRouter();
   return (
-    <section className="border-t shadow-inner py-8">
+    <section className="border-t py-8 shadow-inner">
       <div className="container">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-2 md:flex-row md:items-center">
@@ -36,7 +39,11 @@ export default function PostFilterSection({
               value={selectedCategory}
               onValueChange={(value) => {
                 setSelectedCategory(value);
-                setCurrentPage(1);
+                router.push(
+                  value === "Tüm Kategoriler"
+                    ? ROUTES.INTERNAL.BLOG.CATEGORY("tum-kategoriler")
+                    : ROUTES.INTERNAL.BLOG.CATEGORY(value),
+                );
               }}
             >
               <SelectTrigger
@@ -46,9 +53,16 @@ export default function PostFilterSection({
                 <SelectValue placeholder="Kategori Seçin" />
               </SelectTrigger>
               <SelectContent>
-                {CATEGORIES.map((category) => (
-                  <SelectItem key={category.value} value={category.value}>
-                    {category.label}
+                <SelectItem value="tum-kategoriler" className="capitalize">
+                  Tüm Kategoriler
+                </SelectItem>
+                {categories.map((category) => (
+                  <SelectItem
+                    key={category.slug}
+                    value={category.slug}
+                    className="capitalize"
+                  >
+                    {category.name}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -59,11 +73,6 @@ export default function PostFilterSection({
             <Input
               type="search"
               placeholder="Blog yazısı ara..."
-              value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                setCurrentPage(1);
-              }}
               className="pr-10"
             />
             <SearchIcon className="text-muted-foreground absolute top-1/2 right-3 size-4 -translate-y-1/2" />

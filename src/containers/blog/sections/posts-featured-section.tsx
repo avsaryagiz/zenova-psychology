@@ -1,7 +1,7 @@
 import TitleSection from "@/components/shared/title-section";
 import React from "react";
 import FeaturedPostCard from "./components/post-featured-card";
-import { Post } from "@/types/shared-types";
+import { Post } from "@/types/strapi_types";
 
 interface IFeatuedPostProps {
   posts: Post[];

@@ -13,7 +13,7 @@ export const ROUTES = {
     },
     BLOG: {
       ROOT: "/blog",
-      CATEGORY: (category: string) => `/blog/${category}`,
+      CATEGORY: (category = "tum-kategoriler") => `/blog/${category}`,
       POST: (slug: string | number) => `/blog/post/${slug}`,
     },
     VIDEO_GALLERY: "/video-galeri",

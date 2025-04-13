@@ -1,5 +1,6 @@
 import { CalendarIcon, ClockIcon, UserIcon } from "@/components/icons";
 import {
+  Badge,
   Card,
   CardDescription,
   CardFooter,
@@ -7,26 +8,39 @@ import {
   CardTitle,
 } from "@/components/ui";
 import { ROUTES } from "@/config/routes";
-import { Post } from "@/types/shared-types";
+import {
+  calculateReadingTime,
+  formatDate,
+  generateDescription,
+} from "@/lib/utils";
+import { Post } from "@/types/strapi_types";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function BlogPostCard({ post }: { post: Post }) {
+interface IPostCardProps {
+  post: Post;
+}
+
+export default function BlogPostCard({ post }: IPostCardProps) {
   return (
-    <Card className="h-full overflow-hidden border p-0">
+    <Card className="overflow-hidden w-full border p-0">
       <div className="relative aspect-[16/9] cursor-pointer overflow-hidden">
         <Link href={ROUTES.INTERNAL.BLOG.POST(post.slug)}>
           <Image
-            src={post.image || "/placeholder.svg"}
+            src={post.cover_image.url || "/placeholder.svg"}
             alt={post.title}
             fill
             className="object-cover transition-transform duration-300 hover:scale-105"
           />
         </Link>
-        <div className="absolute top-4 left-4">
-          <span className="bg-primary text-primary-foreground rounded-full px-3 py-1 text-xs font-medium">
-            {post.categoryName}
-          </span>
+        <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+          {post.categories.map((category) => (
+            <Badge key={category.slug} variant="primary">
+              <Link href={ROUTES.INTERNAL.BLOG.CATEGORY(category.slug)}>
+                {category.name}
+              </Link>
+            </Badge>
+          ))}
         </div>
       </div>
       <CardHeader>
@@ -40,26 +54,31 @@ export default function BlogPostCard({ post }: { post: Post }) {
             </Link>
           </h3>
         </CardTitle>
-        <CardDescription>
-          <p className="text-muted-foreground mb-4 line-clamp-3">
-            {post.excerpt}
+        <CardDescription className="">
+          <p className="text-muted-foreground line-clamp-4">
+            {generateDescription(post.content)}
+            ...
           </p>
         </CardDescription>
       </CardHeader>
-      <CardFooter className="mt-auto flex items-center justify-between border-t p-6 pt-4">
-        <div className="flex items-center gap-2">
+      <CardFooter className="mt-auto flex items-center justify-between border-t p-4">
+        <div className="flex gap-2">
           <UserIcon className="text-muted-foreground size-4" />
-          <span className="text-muted-foreground text-sm">{post.author}</span>
+          <span className="text-muted-foreground text-sm">
+            {post.expert.name}
+          </span>
         </div>
         <div className="flex items-center gap-4">
-          <div className="flex items-center gap-1">
+          <div className="flex gap-1">
             <CalendarIcon className="text-muted-foreground size-4" />
-            <span className="text-muted-foreground text-sm">{post.date}</span>
+            <span className="text-muted-foreground text-sm">
+              {formatDate(post.publishedAt)}
+            </span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex gap-1">
             <ClockIcon className="text-muted-foreground size-4" />
             <span className="text-muted-foreground text-sm">
-              {post.readTime}
+              {calculateReadingTime(post.content)}dk
             </span>
           </div>
         </div>
