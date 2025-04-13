@@ -35,6 +35,7 @@ jobs:
 
             #### FRONTEND BUILD ####
             echo "STRAPI_BEARER_TOKEN=${{ secrets.STRAPI_BEARER_TOKEN }}" >> .env.local
+            echo "REVALIDATION_KEY=${{ secrets.REVALIDATION_KEY }}" >> .env.local
 
             npm install
             npm run build
