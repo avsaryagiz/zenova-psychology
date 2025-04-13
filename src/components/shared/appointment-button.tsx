@@ -16,7 +16,7 @@ interface IAppointmenButtonProps {
   className?: string;
 }
 
-export function AppointmentButton({
+export default function AppointmentButton({
   variant = "default",
   href = ROUTES.INTERNAL.APPOINTMENT,
   label,

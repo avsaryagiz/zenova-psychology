@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { AppointmentButton } from "@/components/shared/appointment-button";
 import { MailIcon, PhoneIcon } from "@/components/icons";
+import { AppointmentButton } from "@/components/shared";
 import {
   Badge,
   Card,

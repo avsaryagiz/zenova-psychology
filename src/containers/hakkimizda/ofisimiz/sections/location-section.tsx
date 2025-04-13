@@ -1,6 +1,6 @@
 import { BusIcon, CarIcon, TrainIcon } from "@/components/icons";
 import TitleSection from "@/components/shared/title-section";
-import OfficeInfo from "@/components/shared/office-info";
+import OfficeInfo from "@/components/shared/office-info-section";
 import { GOOGLE_MAPS_IFRAME_URL } from "@/config";
 
 export default function LocationSection() {

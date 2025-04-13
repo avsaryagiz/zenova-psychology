@@ -1,5 +1,5 @@
 import SocialLinks from "@/components/layout/social-links";
-import OfficeInfo from "@/components/shared/office-info";
+import OfficeInfo from "@/components/shared/office-info-section";
 import TitleSection from "@/components/shared/title-section";
 import React from "react";
 

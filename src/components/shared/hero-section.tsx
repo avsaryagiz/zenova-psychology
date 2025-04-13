@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AppointmentButton } from "@/components/shared/appointment-button";
+import AppointmentButton from "./appointment-button";
 import { slugify } from "@/lib/utils";
 
 interface IHeroSectionProps {

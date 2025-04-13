@@ -18,7 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import { ROUTES } from "@/config/routes";
 import { cn } from "@/lib/utils";
 import TitleSection from "@/components/shared/title-section";
-import { AppointmentButton } from "@/components/shared/appointment-button";
+import { AppointmentButton } from "@/components/shared";
 
 const services = [
   {

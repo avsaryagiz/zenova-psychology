@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { BarChartIcon, ChevronRightIcon, ClockIcon } from "@/components/icons";
-import { AppointmentButton } from "@/components/shared/appointment-button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
-import TitleSection from "@/components/shared/title-section";
+import { AppointmentButton, TitleSection } from "@/components/shared";
 import { SERVICES_ITEMS } from "@/config/constants/services-dummy-data";
 
 export default function DetailedServicesSection() {

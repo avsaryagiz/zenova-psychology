@@ -79,8 +79,69 @@
   h4 {
     @apply font-heading text-base font-medium sm:text-xl sm:leading-8;
   }
-  nav {
-    @apply font-heading text-sm font-medium tracking-wide;
+
+  article,
+  .article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-foreground mb-4 scroll-mt-20;
+    }
+
+    p {
+      @apply text-foreground mb-4 text-base leading-relaxed;
+    }
+
+    a {
+      @apply text-primary hover:text-primary-foreground underline underline-offset-4 transition-colors duration-200;
+    }
+
+    ul {
+      @apply mb-4 list-disc pl-6;
+    }
+
+    ol {
+      @apply mb-4 list-decimal pl-6;
+    }
+
+    li {
+      @apply text-foreground mb-2;
+    }
+
+    blockquote {
+      @apply border-muted text-muted-foreground mb-6 border-l-4 pl-4 italic;
+    }
+
+    pre {
+      @apply bg-muted text-muted-foreground mb-6 overflow-x-auto rounded-md p-4 font-mono text-sm;
+    }
+
+    code {
+      @apply font-mono;
+    }
+
+    strong {
+      @apply text-foreground font-semibold;
+    }
+
+    em {
+      @apply text-foreground italic;
+    }
+
+    u {
+      @apply decoration-muted underline underline-offset-4;
+    }
+
+    del {
+      @apply text-muted-foreground line-through;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { AppointmentButton } from "@/components/shared";
 import {
   Carousel,
   CarouselContent,
@@ -15,7 +16,6 @@ import {
 } from "@/components/ui";
 import { ROUTES } from "@/config/routes";
 import { cn } from "@/lib/utils";
-import { AppointmentButton } from "@/components/shared/appointment-button";
 
 const heroSlides = [
   {

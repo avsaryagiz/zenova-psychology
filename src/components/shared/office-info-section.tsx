@@ -1,7 +1,7 @@
 import React from "react";
 import { ClockIcon, LocationIcon, MailIcon, PhoneIcon } from "../icons";
 
-export default function OfficeInfo() {
+export default function OfficeInfoSection() {
   return (
     <section className="space-y-6">
       <div className="flex items-start gap-4">

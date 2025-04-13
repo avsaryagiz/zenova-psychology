@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { AppointmentButton } from "@/components/shared/appointment-button";
 import { buttonVariants } from "@/components/ui/button";
+import AppointmentButton from "./appointment-button";
 import { ROUTES } from "@/config/routes";
 import { cn } from "@/lib/utils";
 
