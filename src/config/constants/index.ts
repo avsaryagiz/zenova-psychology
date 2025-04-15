@@ -5,4 +5,5 @@ export enum DEFAULT_VARIABLES {
   EXPERT_BRANCH_NAME = "Tüm Uzmanlar",
   ITEMS_PER_PAGE = 3,
   YOUTUBE_CHANNEL_ID = "UCjwrn4HaG0JZ8qLlSvRNeUw",
+  APPOINTMENT_URL = "https://www.doktortakvimi.com/muberra-sabuncu/psikoloji-aile-danismani/istanbul",
 }
