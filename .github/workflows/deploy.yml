@@ -33,6 +33,9 @@ jobs:
             cd /root/zenova-psychology
             git pull origin main
 
+            rm -rf .env.local
+            nano .env.local
+
             #### FRONTEND BUILD ####
             echo "STRAPI_BEARER_TOKEN=${{ secrets.STRAPI_BEARER_TOKEN }}" >> .env.local
             echo "REVALIDATION_KEY=${{ secrets.REVALIDATION_KEY }}" >> .env.local
