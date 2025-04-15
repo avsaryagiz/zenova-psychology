@@ -7,7 +7,7 @@ import { type Modifier, type TextInlineNode } from "./text";
 import Link from "next/link";
 import { getImageSizes, slugify } from "@/lib/utils";
 import Image from "next/image";
-import { ImageFormats } from "@/types/strapi_types";
+import { ImageFormats } from "@/types/strapi-types";
 
 /* -------------------------------------------------------------------------------------------------
  * TypeScript types and utils

@@ -113,7 +113,7 @@ export default function TestimonialsSection() {
                 key={id}
                 className="sm:basis-1/2 sm:pl-4 lg:basis-1/3"
               >
-                <Card>
+                <Card className="h-full">
                   <CardHeader className="flex items-start justify-between">
                     <CommentsIcon className="text-primary mb-3 h-6 w-6 md:h-8 md:w-8" />
                     <div className="flex">
@@ -135,7 +135,7 @@ export default function TestimonialsSection() {
                       &quot;{quote}&quot;
                     </p>
                   </CardContent>
-                  <CardFooter>
+                  <CardFooter className="mt-auto">
                     <Avatar className="relative mr-3 size-10 overflow-hidden rounded-full border md:mr-4 md:size-12">
                       <AvatarImage
                         src={image}

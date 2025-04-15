@@ -88,7 +88,7 @@ export function TableOfContents({ headings }: TocProps) {
                 href={`#${id}`}
                 style={{ paddingLeft: `${(heading.level - 1) * 0.5}rem` }}
                 className={cn(
-                  "text-muted-foreground inline-block w-full py-1.5 text-left transition-colors",
+                  "text-muted-foreground inline-block w-full scroll-auto py-1.5 text-left text-sm transition-colors",
                   activeId === id && "text-foreground font-medium",
                   activeId !== id && "group-hover:text-foreground/90",
                 )}

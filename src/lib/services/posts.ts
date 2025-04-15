@@ -1,5 +1,5 @@
 import { fetchAPI } from "../api/fetch-API";
-import type { PostsResponse, Post } from "@/types/strapi_types";
+import type { PostsResponse, Post } from "@/types/strapi-types";
 
 /**
  * Fetch all post slugs.
@@ -30,7 +30,7 @@ export async function fetchRelatedPosts(
       id: { $ne: currentPostId },
       categories: { id: { $in: categoryIds } },
     },
-    populate: ["cover_image", "categories", "expert.image"],
+    populate: ["coverImage", "categories", "expert.image"],
     pagination: { limit },
     sort: { createdAt: "desc" },
   });
@@ -50,7 +50,7 @@ export async function fetchSinglePost(slugOrId: string): Promise<Post> {
   const response = await fetchAPI<PostsResponse>("/posts", {
     filters: { [filterField]: { $eq: slugOrId } },
     populate: {
-      cover_image: { fields: ["url"] },
+      coverImage: { fields: ["url"] },
       expert: { populate: ["image"] },
       categories: { fields: ["name", "slug"] },
     },
@@ -83,7 +83,7 @@ export async function fetchPostsByCategory(
 ): Promise<PostsResponse> {
   const baseQuery = {
     filters: { categories: { slug: { $eq: categorySlug } } },
-    populate: ["cover_image", "categories", "expert.image"],
+    populate: ["coverImage", "categories", "expert.image"],
     sort: { createdAt: "desc" },
   };
 
@@ -109,7 +109,7 @@ export async function fetchPosts(
 ): Promise<PostsResponse> {
   const baseQuery = {
     sort: { createdAt: "desc" },
-    populate: ["cover_image", "categories", "expert.image"],
+    populate: ["coverImage", "categories", "expert.image"],
   };
 
   const query =

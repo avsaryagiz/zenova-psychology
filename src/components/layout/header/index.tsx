@@ -6,14 +6,9 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import LogoType from "/public/images/logo/zenova-logo-type.png";
 import LogoMark from "/public/images/logo/zenova-logo-mark.png";
+import { HeaderBanner, HeaderNav, HeaderWhatsapp } from "./components";
 import { AppointmentButton } from "@/components/shared";
-import { WhatsappIcon } from "@/components/icons";
-import HeaderBanner from "./header-banner";
-import HeaderSearch from "./header-search";
-import HeaderNav from "./header-nav";
-import { SOCIAL_MEDIA_ROUTES } from "@/config/social-media-routes";
 import { ROUTES } from "@/config/routes";
-import { formatPhoneNumber } from "@/lib/utils";
 
 export default function Header() {
   const headerRef = useRef<HTMLElement | null>(null);
@@ -44,24 +39,18 @@ export default function Header() {
               src={LogoType}
               priority
               alt="Zenova Psikoloji Logo"
-              className="h-16 w-auto max-sm:hidden"
+              className="h-16 w-auto max-lg:hidden"
             />
 
             <Image
               src={LogoMark}
               priority
               alt="Zenova Psikoloji Logo"
-              className="hidden h-9 w-auto max-sm:block"
+              className="hidden h-9 w-auto max-lg:block"
             />
           </Link>
           <div className="flex items-center gap-8 lg:gap-16">
-            <a
-              href={`https://wa.me/${formatPhoneNumber(SOCIAL_MEDIA_ROUTES.PHONE)}`}
-              className="flex items-center text-[#128c7e] transition-transform hover:scale-105 max-xl:flex-col max-xl:items-start max-md:hidden lg:gap-2"
-            >
-              <WhatsappIcon className="size-4 lg:size-9" />
-              <h3 className="max-xl:text-xl">{SOCIAL_MEDIA_ROUTES.PHONE}</h3>
-            </a>
+            <HeaderWhatsapp className="max-md:hidden" />
             <AppointmentButton variant="header" />
           </div>
         </div>
@@ -79,14 +68,14 @@ export default function Header() {
           >
             <div className="container flex items-center justify-between gap-4 py-2">
               <HeaderNav />
-              <HeaderSearch />
+              <HeaderWhatsapp />
             </div>
           </motion.nav>
         ) : (
           <nav className="border-b shadow-md">
             <div className="container flex items-center justify-between gap-4 py-2">
               <HeaderNav />
-              <HeaderSearch />
+              <HeaderWhatsapp className="hidden max-md:flex" />
             </div>
           </nav>
         )}

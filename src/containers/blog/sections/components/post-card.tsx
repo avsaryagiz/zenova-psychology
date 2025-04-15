@@ -13,7 +13,7 @@ import {
   formatDate,
   generateDescription,
 } from "@/lib/utils";
-import { Post } from "@/types/strapi_types";
+import { Post } from "@/types/strapi-types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,11 +23,11 @@ interface IPostCardProps {
 
 export default function BlogPostCard({ post }: IPostCardProps) {
   return (
-    <Card className="overflow-hidden w-full border p-0">
+    <Card className="w-full overflow-hidden border p-0">
       <div className="relative aspect-[16/9] cursor-pointer overflow-hidden">
         <Link href={ROUTES.INTERNAL.BLOG.POST(post.slug)}>
           <Image
-            src={post.cover_image.url || "/placeholder.svg"}
+            src={post.coverImage.url || "/placeholder.svg"}
             alt={post.title}
             fill
             className="object-cover transition-transform duration-300 hover:scale-105"
@@ -65,6 +65,7 @@ export default function BlogPostCard({ post }: IPostCardProps) {
         <div className="flex gap-2">
           <UserIcon className="text-muted-foreground size-4" />
           <span className="text-muted-foreground text-sm">
+            {post.expert.expertTitle}{" "}
             {post.expert.name}
           </span>
         </div>

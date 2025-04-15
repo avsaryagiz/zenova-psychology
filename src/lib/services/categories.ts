@@ -1,5 +1,5 @@
 import { fetchAPI } from "../api/fetch-API";
-import type { CategoriesResponse, Category } from "@/types/strapi_types";
+import type { CategoriesResponse, Category } from "@/types/strapi-types";
 
 /**
  * Fetch all categories.

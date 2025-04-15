@@ -1,12 +1,76 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import slugifyFn from "slugify";
-import type { ContentBlock, ContentNodeChild } from "@/types/strapi_types";
+import type { ContentBlock, ContentNodeChild } from "@/types/strapi-types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+/**
+ * Get YouTube embed URL from a YouTube video URL.
+ * @param url - The YouTube video URL (e.g., "https://www.youtube.com/watch?v=VIDEO_ID").
+ * @returns - The YouTube embed URL (e.g., "https://www.youtube.com/embed/VIDEO_ID").
+ */
+export const getYouTubeEmbedUrl = (url: string): string => {
+  const videoId = new URL(url).searchParams.get("v");
+  return `https://www.youtube.com/embed/${videoId}`;
+};
+
+/**
+ * Format a duration string in ISO 8601 format to a human-readable format or total seconds.
+ * @param duration - The duration string in ISO 8601 format (e.g., "PT1H30M15S").
+ * @param options - Optional configuration object.
+ * @param options.asSeconds - If true, return the total duration in seconds instead of a formatted string.
+ * @returns - The formatted duration string (e.g., "01:30:15") or total seconds (e.g., 5415).
+ * If the input string is not in a valid format, it returns "00:00:00" or 0.
+ */
+export function formatDuration(
+  duration: string,
+  options?: { asSeconds?: boolean },
+): string | number {
+  const regex = /^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/;
+  const matches = duration.match(regex);
+
+  if (!matches) {
+    return options?.asSeconds ? 0 : "00:00:00";
+  }
+
+  const hours = matches[1] ? parseInt(matches[1], 10) : 0;
+  const minutes = matches[2] ? parseInt(matches[2], 10) : 0;
+  const seconds = matches[3] ? parseInt(matches[3], 10) : 0;
+
+  if (options?.asSeconds) {
+    return hours * 3600 + minutes * 60 + seconds;
+  }
+
+  const formattedHours = hours.toString().padStart(2, "0");
+  const formattedMinutes = minutes.toString().padStart(2, "0");
+  const formattedSeconds = seconds.toString().padStart(2, "0");
+
+  return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+}
+
+/**
+ * Capitalize the first letters of each word in a string and uppercase the last word
+ * @param str - The input string to format
+ * @returns - The formatted string with capitalized first letters and uppercase last word
+ */
+export function formatName(str: string) {
+  if (!str) return str;
+  const words = str.trim().split(" ");
+  const lastWord = words.pop()?.toUpperCase();
+  const capitalizedWords = words.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+  return [...capitalizedWords, lastWord].join(" ");
+}
+
+/**
+ * Format phone number to remove spaces and special characters
+ * @param phone
+ * @returns Formatted phone number string
+ */
 export function formatPhoneNumber(phone: string) {
   if (!phone || typeof phone !== "string") return "";
 

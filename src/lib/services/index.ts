@@ -1,5 +1,4 @@
 import { unstable_cache } from "next/cache";
-import { AppError, handleError } from "../utils/error-handler";
 import {
   fetchPosts,
   fetchPostsByCategory,
@@ -8,8 +7,86 @@ import {
   fetchSinglePost,
 } from "./posts";
 import { fetchCategories } from "./categories";
+import { fetchBranches } from "./branches";
+import { fetchExperts } from "./experts";
+import { getAllVideos } from "./videos";
+import { AppError, handleError } from "../utils/error-handler";
 import { ERROR_MESSAGES } from "@/config/constants/error-messages";
-import type { Category, Post } from "@/types/strapi_types";
+import type {
+  Branch,
+  Category,
+  Expert,
+  Post,
+  UnifiedVideo,
+} from "@/types/strapi-types";
+
+/**
+ * Fetch all videos and cache the response.
+ * @returns {Promise<IUnifiedVideo[]>} A promise that resolves to an array of videos.
+ * This function fetches all videos from the API and caches the response.
+ */
+export const getCachedVideos = unstable_cache(
+  async (): Promise<UnifiedVideo[]> => {
+    try {
+      return await getAllVideos();
+    } catch (error) {
+      console.error("Error fetching videos:", error);
+      return [];
+    }
+  },
+  ["videos-list"],
+  {
+    tags: ["videos"],
+    revalidate: 86400, // 24 hours
+  },
+);
+
+/**
+ * Fetch all branches and cache the response.
+ * @returns {Promise<Branch[]>} A promise that resolves to an array of branches.
+ * This function fetches all branches from the API and caches the response.
+ */
+export const getCachedBranches = unstable_cache(
+  async (): Promise<Branch[]> => {
+    try {
+      return await fetchBranches();
+    } catch (error) {
+      handleError(
+        new AppError(
+          ERROR_MESSAGES.FETCH_BRANCHES,
+          "fn:getCachedBranches",
+          error,
+        ),
+      );
+      return [] as Branch[];
+    }
+  },
+  ["branches-cache"],
+  { tags: ["revalidate"] },
+);
+
+/**
+ * Fetch all experst and cache the response.
+ * @returns {Promise<Expert[]>} A promise that resolves to an array of experts.
+ */
+export const getCachedExperts = unstable_cache(
+  async (): Promise<Expert[]> => {
+    try {
+      return await fetchExperts();
+    } catch (error) {
+      handleError(
+        new AppError(
+          ERROR_MESSAGES.FETCH_EXPERTS,
+          "fn:getCachedExperts",
+          error,
+        ),
+      );
+      return [] as Expert[];
+    }
+  },
+  ["experts-cache"],
+  { tags: ["revalidate"] },
+);
 
 /**
  * Fetch all posts' slugs and cache the response.
