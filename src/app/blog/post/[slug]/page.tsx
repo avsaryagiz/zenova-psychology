@@ -71,7 +71,7 @@ export async function generateMetadata({
     };
   }
 
-  const { title, content, cover_image } = post;
+  const { title, content, coverImage } = post;
   const excerpt = generateDescription(content) || "Zenova Psikoloji Blogu";
 
   const metadata = {
@@ -82,8 +82,8 @@ export async function generateMetadata({
       description: excerpt,
       images: [
         {
-          url: cover_image?.url,
-          alt: cover_image?.alternativeText,
+          url: coverImage?.url,
+          alt: coverImage?.alternativeText,
         },
       ],
     },
@@ -92,8 +92,8 @@ export async function generateMetadata({
       description: excerpt,
       images: [
         {
-          url: cover_image?.url,
-          alt: cover_image?.alternativeText,
+          url: coverImage?.url,
+          alt: coverImage?.alternativeText,
         },
       ],
     },

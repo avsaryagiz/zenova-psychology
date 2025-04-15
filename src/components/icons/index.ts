@@ -19,6 +19,7 @@ export { default as SearchIcon } from "./search-icon";
 export { default as CoupleIcon } from "./couple-icon";
 export { default as FamilyIcon } from "./family-icon";
 export { default as ShieldIcon } from "./shield-icon";
+export { default as LoaderIcon } from "./loader-icon";
 export { default as AwardIcon } from "./award-icon";
 export { default as ChildIcon } from "./child-icon";
 export { default as CloseIcon } from "./close-icon";
@@ -35,6 +36,7 @@ export { default as CarIcon } from "./car-icon";
 export { default as BusIcon } from "./bus-icon";
 
 // SOCIAL
+export { default as YoutubeShortsIcon } from "./youtubeshorts-icon";
 export { default as InstagramIcon } from "./instagram-icon";
 export { default as FacebookIcon } from "./facebook-icon";
 export { default as LinkedInIcon } from "./linkedin-icon";

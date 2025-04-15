@@ -5,40 +5,43 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui";
-import type { IVideoItem } from "@/types/shared-types";
+import { getYouTubeEmbedUrl } from "@/lib/utils";
+import { UnifiedVideo } from "@/types/strapi-types";
 
 interface IVideoModalProps {
-  selectedVideo: IVideoItem;
-  setSelectedVideo: (video: IVideoItem | null) => void;
+  selectedVideo: UnifiedVideo;
+  setSelectedVideo: (video: UnifiedVideo | null) => void;
 }
 
 export default function VideoModal({
   selectedVideo,
   setSelectedVideo,
-}: IVideoModalProps & { selectedVideo: IVideoItem | null }) {
+}: IVideoModalProps & { selectedVideo: UnifiedVideo | null }) {
+  const embedVideoURL = getYouTubeEmbedUrl(selectedVideo?.url || "");
   return (
     <Dialog
       open={!!selectedVideo}
       onOpenChange={(open: boolean) => !open && setSelectedVideo(null)}
     >
-      <DialogContent className="max-w-4xl pt-12 md:p-8 md:pt-12">
+      <DialogContent className="pt-12 md:p-8 md:pt-10">
         <div className="relative">
           <div className="aspect-video w-full overflow-hidden rounded-lg">
             <iframe
-              src={(selectedVideo as IVideoItem).videoUrl}
-              title={(selectedVideo as IVideoItem).title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              src={embedVideoURL}
+              title={selectedVideo?.title}
+              width="640"
+              height="360"
               allowFullScreen
-              className="h-full w-full"
+              className="aspect-video h-full w-full"
             />
           </div>
         </div>
         <DialogHeader className="px-4 pb-2 md:px-0 md:pb-0">
-          <DialogTitle className="text-xl md:text-2xl leading-snug">
-            {(selectedVideo as IVideoItem).title}
+          <DialogTitle className="text-xl leading-tight">
+            {selectedVideo?.title}
           </DialogTitle>
-          <DialogDescription className="text-muted-foreground mt-2 text-sm md:text-base">
-            {(selectedVideo as IVideoItem).description}
+          <DialogDescription className="text-muted-foreground mt-2 text-sm leading-tight">
+            {selectedVideo?.description}
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

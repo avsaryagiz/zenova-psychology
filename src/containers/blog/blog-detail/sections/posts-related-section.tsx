@@ -1,6 +1,6 @@
 import BlogPostCard from "../../sections/components/post-card";
 import TitleSection from "@/components/shared/title-section";
-import type { Post } from "@/types/strapi_types";
+import type { Post } from "@/types/strapi-types";
 
 interface IRelatedPost {
   relatedPosts: Post[];

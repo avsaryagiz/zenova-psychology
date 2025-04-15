@@ -1,6 +1,5 @@
 import TeamContainer from "@/containers/hakkimizda/ekibimiz";
-import React from "react";
 
-export default function TeamPage() {
+export default async function TeamPage() {
   return <TeamContainer />;
 }

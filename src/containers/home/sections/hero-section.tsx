@@ -71,7 +71,7 @@ export default function HeroSection() {
           loop: true,
         }}
       >
-        <CarouselContent className="h-[500px] md:h-[600px]">
+        <CarouselContent className="h-[50vh] md:h-[70vh]">
           {heroSlides.map((slide) => (
             <CarouselItem key={slide.id} className="relative w-full">
               <div className="relative h-full w-full">
@@ -80,7 +80,7 @@ export default function HeroSection() {
                   alt={slide.title}
                   fill
                   priority
-                  className="object-cover"
+                  className="object-cover blur-xs brightness-[0.9]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
                 <div className="absolute inset-0 flex items-center">

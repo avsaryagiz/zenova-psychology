@@ -7,8 +7,10 @@ import {
 } from "./sections";
 import FAQSection from "@/components/shared/faq-section";
 import { HOME_FAQ_ITEMS } from "@/config/constants/faq-dummy-data";
+import { getCachedExperts } from "@/lib/services";
 
-export default function HomeContainer() {
+export default async function HomeContainer() {
+  const teamMembers = await getCachedExperts();
   return (
     <main>
       <HeroSection />
@@ -21,7 +23,7 @@ export default function HomeContainer() {
         backgroundImage="/images/home/hero/aile-terapisi.jpg"
       />
       <TestimonialsSection />
-      <TeamSection />
+      <TeamSection teamMembers={teamMembers} />
       <FAQSection
         id="sikca-sorulan-sorular"
         titleSection={{

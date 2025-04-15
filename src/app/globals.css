@@ -27,6 +27,7 @@
   --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
+  --color-youtube: var(--youtube);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --radius-sm: calc(var(--radius) - 4px);
@@ -58,6 +59,7 @@
   --border: oklch(0.9 0 0);
   --input: oklch(0.9 0 0);
   --ring: oklch(0.65 0.1423 253.92);
+  --youtube: oklch(0.63 0.2577 29.23);
 }
 
 @layer base {
@@ -164,19 +166,38 @@
 
   @media (min-width: 1024px) {
     .container {
-      max-width: 1024px;
+      max-width: 960px;
     }
   }
 
   @media (min-width: 1280px) {
     .container {
-      max-width: 1280px;
+      max-width: 1152px;
     }
   }
 
   @media (min-width: 1536px) {
     .container {
-      max-width: 1536px;
+      max-width: 1440px;
+    }
+  }
+  @media (min-width: 1920px) {
+    .container {
+      max-width: 1600px;
+    }
+  }
+
+  /* 4XL (ultrawide / 2560px) */
+  @media (min-width: 2560px) {
+    .container {
+      max-width: 1800px;
+    }
+  }
+
+  /* 5XL (5K displays, 3200px and up) */
+  @media (min-width: 3200px) {
+    .container {
+      max-width: 1920px;
     }
   }
   .button {

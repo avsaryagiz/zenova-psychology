@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui";
-import { PlayIcon } from "@/components/icons";
 import TitleSection from "@/components/shared/title-section";
 import { cn } from "@/lib/utils";
+import { ROUTES } from "@/config/routes";
 
 export default function SubscribeSection() {
   return (
@@ -18,28 +18,32 @@ export default function SubscribeSection() {
             />
 
             <a
-              href="https://www.youtube.com/channel/UCxxx"
+              href={ROUTES.SOCIAL.YOUTUBE}
+              title="YouTube Kanalımıza Abone Olun"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(buttonVariants({ size: "lg" }), "w-fit")}
               role="button"
-              aria-label="YouTube Kanalına Abone Ol"
+              aria-label="YouTube Kanalımıza Abone Olun"
             >
               Abone Ol
             </a>
           </div>
-          <div className="relative aspect-video overflow-hidden rounded-lg">
-            <Image
-              src="/images/home/hero/profesyonel-destek.jpg"
-              alt="YouTube Kanalı"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-              <div className="bg-primary text-primary-foreground flex h-16 w-16 items-center justify-center rounded-full">
-                <PlayIcon className="size-8" />
-              </div>
-            </div>
+          <div className="relative aspect-video overflow-hidden rounded-2xl border">
+            <a
+              href={ROUTES.SOCIAL.YOUTUBE}
+              title="YouTube Kanalımıza Abone Olun"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <Image
+                src="/images/zenova-youtube-subscribe.webp"
+                alt="YouTube Kanalı"
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </a>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import { LoaderIcon } from "../icons";
 
 const buttonVariants = cva(
   "inline-flex items-center button active:scale-95 justify-center gap-2 tranisiton-colors whitespace-nowrap rounded-md text-xs font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
@@ -40,24 +41,47 @@ const buttonVariants = cva(
   },
 );
 
+interface ButtonProps
+  extends React.ComponentProps<"button">,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+  icon?: React.FC<React.SVGProps<SVGSVGElement>>;
+  afterIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
+  isLoading?: boolean;
+}
+
 function Button({
   className,
   variant,
   size,
+  icon: Icon,
+  afterIcon: AfterIcon,
+  isLoading = false,
   asChild = false,
   ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-  }) {
+}: ButtonProps) {
   const Comp = asChild ? Slot : "button";
 
   return (
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
+      disabled={isLoading}
       {...props}
-    />
+    >
+      <span className="flex items-center gap-2">
+        {isLoading ? (
+          <LoaderIcon className="size-3 animate-spin" />
+        ) : (
+          Icon && <Icon className="size-3" />
+        )}
+        {/* Render the button text */}
+        {props.children}
+
+        {/* Render the afterIcon if provided */}
+        {AfterIcon && <AfterIcon className="size-3" />}
+      </span>
+    </Comp>
   );
 }
 

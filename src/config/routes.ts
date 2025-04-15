@@ -20,4 +20,7 @@ export const ROUTES = {
     CONTACT: "/iletisim",
     APPOINTMENT: "/randevu-al",
   },
+  SOCIAL: {
+    YOUTUBE: "https://www.youtube.com/@sabuncupsikoloji",
+  },
 } as const;

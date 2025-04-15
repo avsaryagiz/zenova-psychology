@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeadingBlockNode, RootNode } from "./components/blocks-renderer";
 import { CalendarIcon, ClockIcon, UserIcon } from "@/components/icons";
 import PostsRelatedSection from "./sections/posts-related-section";
 import CTASection from "@/components/shared/cta-section";
+import { TableOfContents } from "./sections/toc";
+import { BlocksRenderer } from "./components";
 import { Badge } from "@/components/ui";
 import { calculateReadingTime, formatDate } from "@/lib/utils";
-import { BlocksRenderer } from "./components";
-import { HeadingBlockNode, RootNode } from "./components/blocks-renderer";
-import { TableOfContents } from "./sections/toc";
 import { ROUTES } from "@/config/routes";
-import { Post } from "@/types/strapi_types";
+import type { Post } from "@/types/strapi-types";
 
 interface BlogDetailContainerProps {
   post: Post;
@@ -31,7 +31,7 @@ export default function BlogDetailContainer({
       <section className="relative h-[400px] py-16 md:py-24">
         <div className="absolute inset-0 z-0">
           <Image
-            src={post.cover_image.url || "/placeholder.svg"}
+            src={post.coverImage.url || "/placeholder.svg"}
             alt={post.title}
             fill
             className="object-cover brightness-[0.4]"
@@ -71,10 +71,9 @@ export default function BlogDetailContainer({
         </div>
       </section>
 
-      {/* Blog Content Section for 2xl and above */}
-      <section className="relative container mx-auto my-8 hidden justify-center md:my-12 2xl:flex">
+      <section className="relative container mx-auto my-8 justify-center md:my-12">
         {/* Article */}
-        <div className="w-full max-w-3xl">
+        <div className="w-full max-w-3xl max-xl:mx-auto 2xl:ml-[250px]">
           <article className="w-full">
             <BlocksRenderer content={post.content as RootNode[]} />
           </article>
@@ -82,22 +81,7 @@ export default function BlogDetailContainer({
 
         {/* TOC */}
         {filteredHeadings ? (
-          <aside className="absolute top-0 right-20 hidden h-full min-h-screen w-[250px] 2xl:block">
-            <TableOfContents headings={filteredHeadings} />
-          </aside>
-        ) : null}
-      </section>
-
-      {/* Blog Content Section for below 2xl */}
-      <section className="mx-auto my-8 grid max-w-6xl gap-8 md:my-12 md:gap-12 lg:grid-cols-[1fr_250px] 2xl:hidden">
-        <div className="container mx-auto flex justify-center">
-          <article className="w-full max-w-3xl">
-            <BlocksRenderer content={post.content as RootNode[]} />
-          </article>
-        </div>
-
-        {filteredHeadings ? (
-          <aside className="hidden lg:block">
+          <aside className="absolute top-0 right-8 h-full min-h-screen w-[250px] max-xl:hidden">
             <TableOfContents headings={filteredHeadings} />
           </aside>
         ) : null}

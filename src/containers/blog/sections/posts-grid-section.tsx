@@ -1,44 +1,23 @@
-"use client";
-import React, { useState } from "react";
+import { SearchIcon } from "@/components/icons";
 import BlogPostCard from "./components/post-card";
 import { Button } from "@/components/ui";
-import { SearchIcon } from "@/components/icons";
-import { Post } from "@/types/strapi_types";
+import type { Post } from "@/types/strapi-types";
 
 interface IPostsGridSectionProps {
   posts: Post[];
 }
 
 export default function PostsGridSection({ posts }: IPostsGridSectionProps) {
-  const [postsToShow, setPostsToShow] = useState(
-    Number(process.env.NEXT_PUBLIC_PAGE_LIMIT || "3"),
-  );
-
-  const loadMorePosts = () => {
-    setPostsToShow(
-      postsToShow + Number(process.env.NEXT_PUBLIC_PAGE_LIMIT || "3"),
-    );
-  };
-
   return (
-    <section className="pb-16 md:pb-24">
+    <section>
       <div className="container">
         {posts.length > 0 ? (
           <div className="flex flex-col justify-center gap-8">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {posts.slice(0, postsToShow).map((post) => (
+              {posts.map((post) => (
                 <BlogPostCard key={post.id} post={post} />
               ))}
             </div>
-            {postsToShow < posts.length && (
-              <Button
-                onClick={loadMorePosts}
-                size="lg"
-                className="cursor-pointer self-center"
-              >
-                Daha Fazla
-              </Button>
-            )}
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center py-16 text-center">

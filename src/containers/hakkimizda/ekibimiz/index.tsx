@@ -1,8 +1,12 @@
 import { JoinOurTeamSection, TeamMembersSection } from "./sections";
 import HeroSection from "@/components/shared/hero-section";
 import CTASection from "@/components/shared/cta-section";
+import { getCachedBranches, getCachedExperts } from "@/lib/services";
 
-export default function TeamContainer() {
+export default async function TeamContainer() {
+  const branchList = await getCachedBranches();
+  const teamMembers = await getCachedExperts();
+
   return (
     <main className="flex flex-col">
       <HeroSection
@@ -11,7 +15,7 @@ export default function TeamContainer() {
             oluşan profesyonel bir ekip ile hizmet veriyoruz. Her biri kendi
             alanında uzmanlaşmış terapistlerimizle tanışın."
       />
-      <TeamMembersSection />
+      <TeamMembersSection branchList={branchList} teamMembers={teamMembers} />
       <JoinOurTeamSection />
       <CTASection
         title="Uzmanlarımızla Tanışmaya Hazır mısınız?"

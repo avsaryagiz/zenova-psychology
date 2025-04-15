@@ -7,6 +7,7 @@ const generateErrorMessage = (
 export const ERROR_MESSAGES = {
   FETCH_API: generateErrorMessage("using", "Fetch API"),
   FETCH_EXPERTS: generateErrorMessage("fetching", "experts"),
+  FETCH_BRANCHES: generateErrorMessage("fetching", "branches"),
   FETCH_POSTS_BY_CATEGORY: generateErrorMessage(
     "fetching",
     "posts by category",
