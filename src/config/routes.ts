@@ -9,7 +9,7 @@ export const ROUTES = {
     },
     SERVICES: {
       ROOT: "/hizmetlerimiz",
-      SERVICE: (service: string) => `/hizmetlerimiz/${service}`,
+      SERVICE: (service: string) => `/hizmetlerimiz#${service}`,
     },
     BLOG: {
       ROOT: "/blog",

@@ -125,10 +125,7 @@ function TeamMemberCard({ member }: { member: Expert }) {
         </div>
 
         <div className="mt-4 border-t pt-4">
-          <AppointmentButton
-            className="w-full"
-            href={`${ROUTES.INTERNAL.APPOINTMENT}?therapist=${member.id}`}
-          />
+          <AppointmentButton className="w-full" />
         </div>
       </CardContent>
     </Card>

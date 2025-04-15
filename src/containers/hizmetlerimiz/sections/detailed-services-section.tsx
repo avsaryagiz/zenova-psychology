@@ -1,10 +1,36 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { BarChartIcon, ChevronRightIcon, ClockIcon } from "@/components/icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import { AppointmentButton, TitleSection } from "@/components/shared";
 import { SERVICES_ITEMS } from "@/config/constants/services-dummy-data";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function DetailedServicesSection() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const [activeTab, setActiveTab] = useState(SERVICES_ITEMS[0].id);
+
+  // Check for hashtag in URL when component mounts
+  useEffect(() => {
+    // Get the hashtag from the URL (if any)
+    const hash = window.location.hash.replace("#", "");
+
+    // If there's a hashtag and it matches one of our tabs, set it as active
+    if (hash && SERVICES_ITEMS.some((item) => item.id === hash)) {
+      setActiveTab(hash);
+    }
+  }, []);
+
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+
+    // Update the URL with the hashtag without causing a page reload
+    window.history.pushState({}, "", `${pathname}#${value}`);
+  };
+
   return (
     <section className="bg-card py-16 shadow-inner md:py-24">
       <div className="container">
@@ -13,10 +39,19 @@ export default function DetailedServicesSection() {
           description="Her bir hizmetimiz hakkında detaylı bilgi edinmek için aşağıdaki sekmeleri kullanabilirsiniz."
         />
 
-        <Tabs defaultValue={SERVICES_ITEMS[0].id} className="mt-12 w-full">
+        <Tabs
+          value={activeTab}
+          onValueChange={handleTabChange}
+          className="mt-12 w-full"
+        >
           <TabsList className="mb-8 flex h-fit w-full flex-wrap justify-center gap-2">
             {SERVICES_ITEMS.map(({ id, title }) => (
-              <TabsTrigger key={id} value={id} id={id}>
+              <TabsTrigger
+                key={id}
+                value={id}
+                id={id}
+                className="-scroll-mt-28 lg:scroll-mt-16"
+              >
                 {title}
               </TabsTrigger>
             ))}
