@@ -259,7 +259,7 @@ export interface Category extends BaseEntity {
 export interface Branch extends BaseEntity {
   name: string;
   slug: string;
-  experts: Expert[];
+  experts?: Expert[];
 }
 
 /**
@@ -268,7 +268,7 @@ export interface Branch extends BaseEntity {
 export interface Speciality extends BaseEntity {
   name: string;
   slug: string;
-  experts: Expert[];
+  experts?: Expert[];
 }
 
 /**
@@ -278,13 +278,13 @@ export interface Expert extends BaseEntity {
   name: string;
   slug: string;
   image: Image;
-  branch: Branch;
   bio: string;
   email: string;
   phone: string;
-  priority: number;
-  specialities: Speciality[];
-  expertTitle: string;
+  branch?: Branch;
+  priority?: number;
+  specialities?: Speciality[];
+  expertTitle?: string;
 }
 
 /**
@@ -294,9 +294,9 @@ export interface Post extends BaseEntity {
   title: string;
   slug: string;
   content: ContentBlock[];
-  categories: Category[];
-  expert: Expert;
   coverImage: Image;
+  categories?: Category[];
+  expert?: Expert;
 }
 
 /**
@@ -319,8 +319,8 @@ export interface StrapiVideo extends BaseEntity {
   description: string;
   publish_date: string;
   url: string;
-  thumbnail: Image;
-  isFeatured: boolean;
+  isFeatured?: boolean;
+  thumbnail?: Image;
 }
 
 /**

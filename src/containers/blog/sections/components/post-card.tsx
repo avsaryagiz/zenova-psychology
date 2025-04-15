@@ -11,6 +11,7 @@ import { ROUTES } from "@/config/routes";
 import {
   calculateReadingTime,
   formatDate,
+  formatName,
   generateDescription,
 } from "@/lib/utils";
 import { Post } from "@/types/strapi-types";
@@ -34,7 +35,7 @@ export default function BlogPostCard({ post }: IPostCardProps) {
           />
         </Link>
         <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-          {post.categories.map((category) => (
+          {post.categories?.map((category) => (
             <Badge key={category.slug} variant="primary">
               <Link href={ROUTES.INTERNAL.BLOG.CATEGORY(category.slug)}>
                 {category.name}
@@ -65,8 +66,7 @@ export default function BlogPostCard({ post }: IPostCardProps) {
         <div className="flex gap-2">
           <UserIcon className="text-muted-foreground size-4" />
           <span className="text-muted-foreground text-sm">
-            {post.expert.expertTitle}{" "}
-            {post.expert.name}
+            {post.expert?.expertTitle} {formatName(post.expert?.name)}
           </span>
         </div>
         <div className="flex items-center gap-4">

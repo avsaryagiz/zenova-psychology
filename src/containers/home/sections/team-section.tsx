@@ -34,8 +34,11 @@ export default function TeamSection({ teamMembers }: TeamSectionProps) {
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {teamMembers.map(
             ({ bio, image, name, expertTitle, specialities }, index) =>
-              specialities.length > 0 ? (
-                <Card key={index} className="gap-4 overflow-hidden text-center border-none shadow-none p-0 pb-4">
+              specialities && specialities.length > 0 ? (
+                <Card
+                  key={index}
+                  className="gap-4 overflow-hidden border-none p-0 pb-4 text-center shadow-none"
+                >
                   <Avatar className="relative h-96 w-full overflow-hidden rounded-md">
                     <AvatarImage
                       src={image.url}

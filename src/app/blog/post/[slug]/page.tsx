@@ -22,7 +22,7 @@ export default async function BlogDetailPage({
     const relatedPosts =
       (await getCachedRelatedPosts(
         post.id,
-        post.categories.map((category) => category.id),
+        post.categories?.map((category) => category.id) || [],
       )) ?? [];
 
     return <BlogDetailContainer post={post} relatedPosts={relatedPosts} />;

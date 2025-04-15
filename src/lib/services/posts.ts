@@ -47,7 +47,7 @@ export async function fetchSinglePost(slugOrId: string): Promise<Post> {
   const isNumeric = /^\d+$/.test(slugOrId);
   const filterField = isNumeric ? "id" : "slug";
 
-  const response = await fetchAPI<PostsResponse>("/posts", {
+  const { data } = await fetchAPI<PostsResponse>("/posts", {
     filters: { [filterField]: { $eq: slugOrId } },
     populate: {
       coverImage: { fields: ["url"] },
@@ -55,18 +55,11 @@ export async function fetchSinglePost(slugOrId: string): Promise<Post> {
       categories: { fields: ["name", "slug"] },
     },
   });
-  if (response.data.length === 0) {
+  if (data.length === 0) {
     throw new Error("Post not found");
   }
 
-  const modifiedResponse = response.data.map((post) => ({
-    ...post,
-    expert: {
-      ...post.expert,
-    },
-  }));
-
-  return modifiedResponse[0];
+  return data[0];
 }
 
 /**

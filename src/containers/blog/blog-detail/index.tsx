@@ -7,7 +7,7 @@ import CTASection from "@/components/shared/cta-section";
 import { TableOfContents } from "./sections/toc";
 import { BlocksRenderer } from "./components";
 import { Badge } from "@/components/ui";
-import { calculateReadingTime, formatDate } from "@/lib/utils";
+import { calculateReadingTime, formatDate, formatName } from "@/lib/utils";
 import { ROUTES } from "@/config/routes";
 import type { Post } from "@/types/strapi-types";
 
@@ -41,7 +41,7 @@ export default function BlogDetailContainer({
         <div className="relative z-10 container text-white">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 flex flex-wrap items-center justify-center gap-2">
-              {post.categories.map((category) => (
+              {post.categories?.map((category) => (
                 <Link
                   key={category.id}
                   href={ROUTES.INTERNAL.BLOG.CATEGORY(category.slug)}
@@ -56,7 +56,7 @@ export default function BlogDetailContainer({
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <UserIcon className="h-4 w-4" />
-                <span>{post.expert.name}</span>
+                <span>{formatName(post.expert?.name)}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CalendarIcon className="h-4 w-4" />
