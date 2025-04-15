@@ -6,11 +6,10 @@ import { BarChartIcon, ChevronRightIcon, ClockIcon } from "@/components/icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import { AppointmentButton, TitleSection } from "@/components/shared";
 import { SERVICES_ITEMS } from "@/config/constants/services-dummy-data";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export default function DetailedServicesSection() {
   const pathname = usePathname();
-  const router = useRouter();
   const [activeTab, setActiveTab] = useState(SERVICES_ITEMS[0].id);
 
   // Check for hashtag in URL when component mounts

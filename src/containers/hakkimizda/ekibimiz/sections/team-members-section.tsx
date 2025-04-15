@@ -13,7 +13,6 @@ import {
 import { MailIcon, PhoneIcon } from "@/components/icons";
 import { AppointmentButton } from "@/components/shared";
 import { formatName } from "@/lib/utils";
-import { ROUTES } from "@/config/routes";
 import type { Branch, Expert } from "@/types/strapi-types";
 
 interface TeamMembersSectionProps {
