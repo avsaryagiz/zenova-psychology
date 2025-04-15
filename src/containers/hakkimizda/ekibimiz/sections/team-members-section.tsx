@@ -13,7 +13,6 @@ import {
 import { MailIcon, PhoneIcon } from "@/components/icons";
 import { AppointmentButton } from "@/components/shared";
 import { formatName } from "@/lib/utils";
-import { ROUTES } from "@/config/routes";
 import type { Branch, Expert } from "@/types/strapi-types";
 
 interface TeamMembersSectionProps {
@@ -125,10 +124,7 @@ function TeamMemberCard({ member }: { member: Expert }) {
         </div>
 
         <div className="mt-4 border-t pt-4">
-          <AppointmentButton
-            className="w-full"
-            href={`${ROUTES.INTERNAL.APPOINTMENT}?therapist=${member.id}`}
-          />
+          <AppointmentButton className="w-full" />
         </div>
       </CardContent>
     </Card>

@@ -1,4 +1,5 @@
 import { ROUTES } from "./routes";
+import { SERVICES_ITEMS } from "@/config/constants/services-dummy-data";
 
 interface IMenus {
   HEADER: IMenu[];
@@ -61,6 +62,14 @@ export const MENUS: IMenus = {
       label: "Hizmetlerimiz",
       title: "Hizmetlerimiz - Sunmuş Olduğumuz Hizmetler",
       path: ROUTES.INTERNAL.SERVICES.ROOT,
+      children: SERVICES_ITEMS.map((item) => ({
+        key: item.id,
+        label: item.title,
+        title: item.title,
+        description: item.shortDescription,
+        path: ROUTES.INTERNAL.SERVICES.SERVICE(item.id),
+        isExternal: false,
+      })),
       isExternal: false,
     },
     {

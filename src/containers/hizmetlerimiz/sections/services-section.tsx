@@ -1,10 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
 import { ChevronRightIcon } from "@/components/icons";
 import TitleSection from "@/components/shared/title-section";
 import { Card, CardContent } from "@/components/ui";
 import { SERVICES_ITEMS } from "@/config/constants/services-dummy-data";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 
 export default function ServicesSection() {
   return (

@@ -1,9 +1,11 @@
 "use client";
 
-import type React from "react";
-
 import { forwardRef, useState } from "react";
+import type React from "react";
+import Image from "next/image";
 import Link from "next/link";
+import LogoType from "/public/images/logo/zenova-logo-type.png";
+import { MenuIcon } from "@/components/icons";
 import {
   Accordion,
   AccordionContent,
@@ -23,15 +25,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui";
-
-import LogoType from "/public/images/logo/zenova-logo-type.png";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { MENUS } from "@/config/menus";
 import SocialLinks from "../../social-links";
-import { MenuIcon } from "@/components/icons";
+import { cn } from "@/lib/utils";
 import { ROUTES } from "@/config/routes";
-import Image from "next/image";
+import { MENUS } from "@/config/menus";
 
 export default function HeaderNav() {
   const [open, setOpen] = useState(false);
@@ -69,7 +67,7 @@ export default function HeaderNav() {
                     className="w-full"
                   >
                     <AccordionItem value={menu.key}>
-                      <AccordionTrigger className="justify-start py-0 text-sm font-medium">
+                      <AccordionTrigger className="justify-start gap-2 py-0 text-sm leading-tight font-medium">
                         {menu.label}
                       </AccordionTrigger>
                       <AccordionContent>
