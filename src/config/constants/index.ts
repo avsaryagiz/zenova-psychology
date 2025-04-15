@@ -1,4 +1,5 @@
 export enum DEFAULT_VARIABLES {
+  PROJECT_NAME = "Zenova Psikoloji",
   BLOG_COVER_IMAGE = "/blog-cover-placeholder.svg",
   EXPERT_IMAGE = "/images/logo/zenova-logo-mark.png",
   EXPERT_BRANCH = "tum-uzmanlar",

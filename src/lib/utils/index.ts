@@ -2,6 +2,7 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import slugifyFn from "slugify";
 import type { ContentBlock, ContentNodeChild } from "@/types/strapi-types";
+import { DEFAULT_VARIABLES } from "@/config/constants";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -56,8 +57,8 @@ export function formatDuration(
  * @param str - The input string to format
  * @returns - The formatted string with capitalized first letters and uppercase last word
  */
-export function formatName(str: string) {
-  if (!str) return str;
+export function formatName(str?: string) {
+  if (!str) return DEFAULT_VARIABLES.PROJECT_NAME;
   const words = str.trim().split(" ");
   const lastWord = words.pop()?.toUpperCase();
   const capitalizedWords = words.map((word) => {

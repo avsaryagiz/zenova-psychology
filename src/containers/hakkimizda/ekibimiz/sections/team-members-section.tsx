@@ -29,7 +29,7 @@ export default function TeamMembersSection({
   const filteredMembers =
     activeBranch === "tum-ekip"
       ? teamMembers
-      : teamMembers.filter((member) => member.branch.slug === activeBranch);
+      : teamMembers.filter((member) => member.branch?.slug === activeBranch);
 
   return (
     <section className="container py-16 md:py-24">
@@ -68,7 +68,7 @@ export default function TeamMembersSection({
           <TabsContent key={branch.id} value={branch.slug} className="mt-0">
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
               {filteredMembers
-                .filter((member) => member.branch.slug === branch.slug)
+                .filter((member) => member.branch?.slug === branch.slug)
                 .map((member) => (
                   <TeamMemberCard key={member.id} member={member} />
                 ))}
@@ -96,9 +96,9 @@ function TeamMemberCard({ member }: { member: Expert }) {
           <h4>
             {member.expertTitle} {formatName(member.name)}
           </h4>
-          <p className="text-primary">{member.branch.name}</p>
+          <p className="text-primary">{member.branch?.name}</p>
         </div>
-        {member.specialities.length > 0 ? (
+        {member.specialities && member.specialities.length > 0 ? (
           <div className="space-y-1">
             <p className="text-sm font-medium">Uzmanlık Alanları:</p>
             <div className="flex flex-wrap gap-1.5">
