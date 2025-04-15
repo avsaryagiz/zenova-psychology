@@ -50,7 +50,7 @@ export default function BlogContainer({
 
       {/* Load More Button */}
       {visiblePosts.length < filteredPosts.length && (
-        <div className="flex justify-center">
+        <div className="mt-16 flex justify-center">
           <Button onClick={loadMorePosts} className="cursor-pointer">
             Daha Fazla Yükle
           </Button>

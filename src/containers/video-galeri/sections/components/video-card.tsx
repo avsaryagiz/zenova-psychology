@@ -62,8 +62,8 @@ export default function VideoCard({
         ) : null}
       </div>
       <CardHeader className="p-4">
-        <CardTitle className="line-clamp-2 text-base">{video.title}</CardTitle>
-        <CardDescription className="mt-1 line-clamp-2 text-xs">
+        <CardTitle className="line-clamp-3 text-lg">{video.title}</CardTitle>
+        <CardDescription className="mt-1 line-clamp-3 text-sm">
           {video.description}
         </CardDescription>
       </CardHeader>

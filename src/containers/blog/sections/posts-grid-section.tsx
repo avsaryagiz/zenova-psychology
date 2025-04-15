@@ -9,7 +9,7 @@ interface IPostsGridSectionProps {
 
 export default function PostsGridSection({ posts }: IPostsGridSectionProps) {
   return (
-    <section className="pb-16 md:pb-24">
+    <section>
       <div className="container">
         {posts.length > 0 ? (
           <div className="flex flex-col justify-center gap-8">

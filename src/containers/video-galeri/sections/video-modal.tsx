@@ -23,7 +23,7 @@ export default function VideoModal({
       open={!!selectedVideo}
       onOpenChange={(open: boolean) => !open && setSelectedVideo(null)}
     >
-      <DialogContent className="max-w-4xl pt-12 md:p-8 md:pt-12">
+      <DialogContent className="pt-12 md:p-8 md:pt-10">
         <div className="relative">
           <div className="aspect-video w-full overflow-hidden rounded-lg">
             <iframe
@@ -32,7 +32,7 @@ export default function VideoModal({
               width="640"
               height="360"
               allowFullScreen
-              className="h-full w-full"
+              className="aspect-video h-full w-full"
             />
           </div>
         </div>
