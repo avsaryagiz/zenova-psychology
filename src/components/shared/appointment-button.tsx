@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { cn, isExternalPath } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { ROUTES } from "@/config/routes";
+import { DEFAULT_VARIABLES } from "@/config/constants";
 
 const VARIANT_LABELS = {
   default: "Randevu Al",
@@ -18,13 +18,13 @@ interface IAppointmenButtonProps {
 
 export default function AppointmentButton({
   variant = "default",
-  href = ROUTES.INTERNAL.APPOINTMENT,
+  href = DEFAULT_VARIABLES.APPOINTMENT_URL,
   label,
   className,
   ...props
 }: IAppointmenButtonProps) {
   const isExternal = href ? isExternalPath(href) : false;
-  const Component = href ? (isExternal ? "a" : Link) : "button";
+  const Component = href ? (isExternal ? "a" : Link) : Button;
   const defaultLabel = VARIANT_LABELS[variant] || "Buton";
 
   if (variant === "header") {
